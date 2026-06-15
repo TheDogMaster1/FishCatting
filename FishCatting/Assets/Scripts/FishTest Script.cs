@@ -16,14 +16,18 @@ public class FishTestScript : MonoBehaviour
             new Fish("RareFish", 200, "Rare", 25),
             new Fish("LegendaryFish", 500, "Legendary", 5)
         };
-        //catch a fish!
+    }
+    //catch a fish!
+    public void BeginFishing()
+    {
         Fish currentfish = CatchFish();
         Debug.Log(currentfish.name);
         Debug.Log(currentfish.value);
         Debug.Log(currentfish.rarity);
         Debug.Log(currentfish.rarityWeight);
     }
-    Fish CatchFish()
+
+    public Fish CatchFish()
     {
         //highestnumber = all fish rarityweight combined
         int highestnumber = 1;
@@ -38,7 +42,7 @@ public class FishTestScript : MonoBehaviour
         foreach (var fish in fishList)
         {
             currentNumber += fish.rarityWeight;
-            if(fishNumber <= currentNumber)
+            if (fishNumber <= currentNumber)
             {
                 return fish;
             }
