@@ -3,35 +3,32 @@ using UnityEngine;
 
 public class FishTestScript : MonoBehaviour
 {
-    public List<Fish> fishList;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //new() is not done at the top so you can change this later for potential saving/loading
-        fishList = new()
-        {
-            //test fish that are only here for testing, make this in a different script when out of testing and we know what fish to make
-            new Fish(name: "CommonFish", value: 50, rarity: "Common", rarityWeight: 100),
-            new Fish("UncommonFish", 75, "Uncommon", 50),
-            new Fish("RareFish", 200, "Rare", 25),
-            new Fish("LegendaryFish", 500, "Legendary", 5)
-        };
     }
     //catch a fish!
     public void BeginFishing()
     {
         Fish currentfish = CatchFish();
-        Debug.Log(currentfish.name);
-        Debug.Log(currentfish.value);
-        Debug.Log(currentfish.rarity);
-        Debug.Log(currentfish.rarityWeight);
+        if (currentfish.caught == true)
+        {
+            Debug.Log($"caught an {currentfish.name} with value of {currentfish.value} and rarity of {currentfish.rarity} (duplicate)");
+        }
+        else
+        {
+            Debug.Log($"caught an new fish called {currentfish.name} with value of {currentfish.value} and rarity of {currentfish.rarity}");
+            currentfish.caught = true;
+        }
+        GameManager.instance.money += currentfish.value;
     }
 
     public Fish CatchFish()
     {
         //highestnumber = all fish rarityweight combined
         int highestnumber = 1;
-        foreach (var fish in fishList)
+        Debug.Log(GameManager.instance.money);
+        foreach (var fish in GameManager.instance.fishList)
         {
             highestnumber += fish.rarityWeight;
         }
@@ -39,7 +36,7 @@ public class FishTestScript : MonoBehaviour
         int fishNumber = Random.Range(1, highestnumber);
         int currentNumber = 0;
         //see which fish belongs to the number
-        foreach (var fish in fishList)
+        foreach (var fish in GameManager.instance.fishList)
         {
             currentNumber += fish.rarityWeight;
             if (fishNumber <= currentNumber)
