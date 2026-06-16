@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GameManager))]
+[RequireComponent(typeof(PlayerDataManager))]
 public class CatchFishes : MonoBehaviour
 {
     public enum FishLocation

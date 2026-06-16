@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2243098873293681472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3464723185631469788}
+  - component: {fileID: 8294926293543675667}
+  - component: {fileID: 7341032076640014567}
+  - component: {fileID: 6448608123319006942}
+  - component: {fileID: 6715686417036798122}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3464723185631469788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243098873293681472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 356.04453, y: 146.9128, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8294926293543675667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243098873293681472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169ec27f6e5baba4db227ea56db1cfa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  money: 0
+  lakeFishList:
+  - name: Trout
+    value: 20
+    rarity: Common
+    rarityWeight: 100
+    caught: 0
+  - name: Carp
+    value: 25
+    rarity: Common
+    rarityWeight: 95
+    caught: 0
+  - name: Crappie
+    value: 30
+    rarity: Common
+    rarityWeight: 80
+    caught: 0
+  - name: FishCat
+    value: 50
+    rarity: Rare
+    rarityWeight: 45
+    caught: 0
+  - name: GoldFish
+    value: 60
+    rarity: Rare
+    rarityWeight: 40
+    caught: 0
+  - name: Crab
+    value: 250
+    rarity: UltraRare
+    rarityWeight: 10
+    caught: 0
+  seaFishList:
+  - name: Mackerel
+    value: 30
+    rarity: Common
+    rarityWeight: 130
+    caught: 0
+  - name: Ray
+    value: 40
+    rarity: Common
+    rarityWeight: 120
+    caught: 0
+  - name: Bass
+    value: 45
+    rarity: Common
+    rarityWeight: 110
+    caught: 0
+  - name: Tuna
+    value: 90
+    rarity: Rare
+    rarityWeight: 40
+    caught: 0
+  - name: Squid
+    value: 115
+    rarity: Rare
+    rarityWeight: 35
+    caught: 0
+  - name: Sunfish
+    value: 350
+    rarity: UltraRare
+    rarityWeight: 6
+    caught: 0
+  forestFishList:
+  - name: Pike
+    value: 50
+    rarity: Common
+    rarityWeight: 175
+    caught: 0
+  - name: Catfish
+    value: 60
+    rarity: Common
+    rarityWeight: 160
+    caught: 0
+  - name: Eel
+    value: 65
+    rarity: Common
+    rarityWeight: 150
+    caught: 0
+  - name: Salmon
+    value: 80
+    rarity: Rare
+    rarityWeight: 75
+    caught: 0
+  - name: CrayFish
+    value: 120
+    rarity: Rare
+    rarityWeight: 60
+    caught: 0
+  - name: Frog
+    value: 500
+    rarity: UltraRare
+    rarityWeight: 5
+    caught: 0
+  unlockedAreas: []
+--- !u!114 &7341032076640014567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243098873293681472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4923b5f4923515b4ab82bbafc3cb407d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
+--- !u!114 &6448608123319006942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243098873293681472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768ef59af99096842972ee904713d7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CatchFishes
+  fishLocation: 0
+--- !u!114 &6715686417036798122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243098873293681472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768ef59af99096842972ee904713d7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FishTestScript
+  fishLocation: 0

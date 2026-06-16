@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerDataManager))]
+[RequireComponent(typeof(CatchFishes))]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
