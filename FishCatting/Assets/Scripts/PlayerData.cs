@@ -7,6 +7,6 @@ public class PlayerData
     public List<Fish> lakeFishList;
     public List<Fish> seaFishList;
     public List<Fish> forestFishList;
-    public List<int> unlockedAreas;
+    public List<string> unlockedAreas;
 
 }

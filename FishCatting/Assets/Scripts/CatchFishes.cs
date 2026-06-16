@@ -8,7 +8,6 @@ public class CatchFishes : MonoBehaviour
         lake,
         sea,
         forest
-
     }
     public FishLocation fishLocation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -80,17 +79,17 @@ public class CatchFishes : MonoBehaviour
         {
             fishLocation = FishLocation.lake;
         }
-        else if (locationID == 2)
+        else if (locationID == 2 && GameManager.instance.unlockedAreas.Contains("Sea"))
         {
             fishLocation = FishLocation.sea;
         }
-        else if (locationID == 3)
+        else if (locationID == 3 && GameManager.instance.unlockedAreas.Contains("Forest"))
         {
             fishLocation =  FishLocation.forest;
         }
         else
         {
-            fishLocation = FishLocation.lake;
+            Debug.Log("area not unlocked >:3");
         }
     }
 }
