@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int money;
-    public List<Fish> fishList = new();
+    public List<Fish> lakeFishList = new();
+    public List<Fish> seaFishList = new();
+    public List<Fish> forestFishList = new();
     public List<int> unlockedAreas = new();
     PlayerDataManager playerDataManager;
 
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerDataManager.LoadGame();
-        if (fishList == null || fishList.Count == 0)
+        if (lakeFishList == null || lakeFishList.Count == 0)
         {
             Debug.Log("no fishies >:(");
         }

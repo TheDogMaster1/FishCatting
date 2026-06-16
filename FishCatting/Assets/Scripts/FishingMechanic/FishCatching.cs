@@ -4,7 +4,7 @@ using UnityEngine;
 public class FishCatching : MonoBehaviour
 {
     private CastingLine casting;
-    private FishTestScript fishTest;
+    private CatchFishes catchFish;
     private GameObject bobber;
     private Animator animator;
 
@@ -30,7 +30,7 @@ public class FishCatching : MonoBehaviour
         casting = GetComponent<CastingLine>();
         bobber = casting.GetBobber();
         animator = bobber.GetComponentInChildren<Animator>();
-        fishTest = GetComponent<FishTestScript>();
+        catchFish = GetComponent<CatchFishes>();
     }
 
     public IEnumerator CastingLine()
@@ -62,7 +62,7 @@ public class FishCatching : MonoBehaviour
         {
             Debug.Log("Yay Yippee you did it yaayayayayay");
             //start minigame
-            fishTest.BeginFishing();
+            catchFish.BeginFishing();
             ResetBobber();
             fishBitten = false;
         }

@@ -1,8 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishTestScript : MonoBehaviour
+public class CatchFishes : MonoBehaviour
 {
+    public enum FishLocation
+    {
+        lake,
+        sea,
+        forest
+
+    }
+    public FishLocation fishLocation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,8 +35,27 @@ public class FishTestScript : MonoBehaviour
     {
         //highestnumber = all fish rarityweight combined
         int highestnumber = 1;
-        Debug.Log(GameManager.instance.money);
-        foreach (var fish in GameManager.instance.fishList)
+        //see at what location we are at for fish
+        List<Fish> fishList;
+        switch (fishLocation)
+        {
+            case FishLocation.lake:
+                fishList = GameManager.instance.lakeFishList;
+                break;
+
+            case FishLocation.sea:
+                fishList = GameManager.instance.seaFishList;
+                break;
+
+            case FishLocation.forest:
+                fishList = GameManager.instance.forestFishList;
+                break;
+
+            default:
+                fishList = GameManager.instance.lakeFishList;
+                break;
+        }
+        foreach (var fish in fishList)
         {
             highestnumber += fish.rarityWeight;
         }
@@ -36,7 +63,7 @@ public class FishTestScript : MonoBehaviour
         int fishNumber = Random.Range(1, highestnumber);
         int currentNumber = 0;
         //see which fish belongs to the number
-        foreach (var fish in GameManager.instance.fishList)
+        foreach (var fish in fishList)
         {
             currentNumber += fish.rarityWeight;
             if (fishNumber <= currentNumber)
@@ -46,5 +73,24 @@ public class FishTestScript : MonoBehaviour
         }
         //shouldn't ever happen but is needed for the code to compile
         return null;
+    }
+    public void ChangeLocation(int locationID)
+    {
+        if (locationID == 1)
+        {
+            fishLocation = FishLocation.lake;
+        }
+        else if (locationID == 2)
+        {
+            fishLocation = FishLocation.sea;
+        }
+        else if (locationID == 3)
+        {
+            fishLocation =  FishLocation.forest;
+        }
+        else
+        {
+            fishLocation = FishLocation.lake;
+        }
     }
 }

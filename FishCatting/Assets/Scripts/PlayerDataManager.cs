@@ -9,15 +9,11 @@ public class PlayerDataManager : MonoBehaviour
         PlayerData playerData = new()
         {
             money = GameManager.instance.money,
-            fishList = GameManager.instance.fishList,
+            lakeFishList = GameManager.instance.lakeFishList,
+            seaFishList = GameManager.instance.seaFishList,
+            forestFishList = GameManager.instance.forestFishList,
             unlockedAreas = GameManager.instance.unlockedAreas
         };
-        Debug.Log(playerData.fishList);
-        foreach (var fish in playerData.fishList)
-        {
-            Debug.Log(fish.name);
-            Debug.Log(fish.caught);
-        }
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
         File.WriteAllText(path, json);
@@ -32,34 +28,24 @@ public class PlayerDataManager : MonoBehaviour
             string json = File.ReadAllText(path);
             PlayerData loadedData = JsonUtility.FromJson<PlayerData>(json);
             GameManager.instance.money = loadedData.money;
-            if (loadedData.fishList != null && loadedData.fishList.Count > 0)
+            if (loadedData.lakeFishList != null && loadedData.lakeFishList.Count > 0)
             {
-                GameManager.instance.fishList = loadedData.fishList;
+                GameManager.instance.lakeFishList = loadedData.lakeFishList;
             }
-            else
+            if (loadedData.seaFishList != null && loadedData.seaFishList.Count > 0)
             {
-                Debug.Log("loading fishies :3");
-                GameManager.instance.fishList = new()
-                {
-                    //test fish list change this to any fish you want
-                    new Fish(name: "CommonFish", value: 50, rarity: "Common", rarityWeight: 100),
-                    new Fish("UncommonFish", 75, "Uncommon", 50),
-                    new Fish("RareFish", 200, "Rare", 25),
-                    new Fish("LegendaryFish", 500, "Legendary", 5)
-                };
+                GameManager.instance.seaFishList = loadedData.seaFishList;
             }
+            if (loadedData.forestFishList != null && loadedData.forestFishList.Count > 0)
+            {
+                GameManager.instance.forestFishList = loadedData.forestFishList;
+            }
+            LoadFishes();
             GameManager.instance.unlockedAreas = loadedData.unlockedAreas;
         }
         else
         {
-            GameManager.instance.fishList = new()
-                {
-                    //test fish list change this to any fish you want
-                    new Fish(name: "CommonFish", value: 50, rarity: "Common", rarityWeight: 100),
-                    new Fish("UncommonFish", 75, "Uncommon", 50),
-                    new Fish("RareFish", 200, "Rare", 25),
-                    new Fish("LegendaryFish", 500, "Legendary", 5)
-                };
+            LoadFishes();
             Debug.Log("File not found!");
         }
     }
@@ -68,12 +54,54 @@ public class PlayerDataManager : MonoBehaviour
         PlayerData playerData = new()
         {
             money = 0,
-            fishList = null,
+            lakeFishList = null,
+            seaFishList = null,
+            forestFishList = null,
             unlockedAreas = new()
         };
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
         File.WriteAllText(path, json);
         LoadGame();
+        SaveGame();
+    }
+    public void LoadFishes()
+    {
+        //eventually this entire class shouldn't be in the script anymore when we don't have test fish
+        Debug.Log("loading fishies :3");
+        if (GameManager.instance.lakeFishList == null || GameManager.instance.lakeFishList.Count < 1)
+        {
+            GameManager.instance.lakeFishList = new()
+            {
+                //test fish list change this to any fish you want
+                new Fish(name: "CommonFish", value: 50, rarity: "Common", rarityWeight: 100),
+                new Fish("UncommonFish", 75, "Uncommon", 50),
+                new Fish("RareFish", 200, "Rare", 25),
+                new Fish("LegendaryFish", 500, "Legendary", 5)
+            };
+        }
+        if (GameManager.instance.seaFishList == null || GameManager.instance.seaFishList.Count < 1)
+        {
+            GameManager.instance.seaFishList = new()
+            {
+                //test fish list change this to any fish you want
+                new Fish(name: "CommonFishSea", value: 50, rarity: "Common", rarityWeight: 100),
+                new Fish("UncommonFishSea", 75, "Uncommon", 50),
+                new Fish("RareFishSea", 200, "Rare", 25),
+                new Fish("LegendaryFishSea", 500, "Legendary", 5)
+            };
+        }
+        if (GameManager.instance.forestFishList == null || GameManager.instance.forestFishList.Count < 1)
+        {
+            GameManager.instance.forestFishList = new()
+            {
+                //test fish list change this to any fish you want
+                new Fish(name: "CommonFishForest", value: 50, rarity: "Common", rarityWeight: 100),
+                new Fish("UncommonFishForest", 75, "Uncommon", 50),
+                new Fish("RareFishForest", 200, "Rare", 25),
+                new Fish("LegendaryFishForest", 500, "Legendary", 5)
+            };
+        }
+
     }
 }
