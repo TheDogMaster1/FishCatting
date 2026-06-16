@@ -2190,9 +2190,99 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   money: 0
-  lakeFishList: []
-  seaFishList: []
-  forestFishList: []
+  lakeFishList:
+  - name: Trout
+    value: 20
+    rarity: Common
+    rarityWeight: 100
+    caught: 0
+  - name: Carp
+    value: 25
+    rarity: Common
+    rarityWeight: 95
+    caught: 0
+  - name: Crappie
+    value: 30
+    rarity: Common
+    rarityWeight: 80
+    caught: 0
+  - name: FishCat
+    value: 50
+    rarity: Rare
+    rarityWeight: 45
+    caught: 0
+  - name: GoldFish
+    value: 60
+    rarity: Rare
+    rarityWeight: 40
+    caught: 0
+  - name: Crab
+    value: 250
+    rarity: UltraRare
+    rarityWeight: 10
+    caught: 0
+  seaFishList:
+  - name: Mackerel
+    value: 30
+    rarity: Common
+    rarityWeight: 130
+    caught: 0
+  - name: Ray
+    value: 40
+    rarity: Common
+    rarityWeight: 120
+    caught: 0
+  - name: Bass
+    value: 45
+    rarity: Common
+    rarityWeight: 110
+    caught: 0
+  - name: Tuna
+    value: 90
+    rarity: Rare
+    rarityWeight: 40
+    caught: 0
+  - name: Squid
+    value: 115
+    rarity: Rare
+    rarityWeight: 35
+    caught: 0
+  - name: Sunfish
+    value: 350
+    rarity: UltraRare
+    rarityWeight: 6
+    caught: 0
+  forestFishList:
+  - name: Pike
+    value: 50
+    rarity: Common
+    rarityWeight: 175
+    caught: 1
+  - name: Catfish
+    value: 60
+    rarity: Common
+    rarityWeight: 160
+    caught: 1
+  - name: Eel
+    value: 65
+    rarity: Common
+    rarityWeight: 150
+    caught: 1
+  - name: Salmon
+    value: 80
+    rarity: Rare
+    rarityWeight: 75
+    caught: 1
+  - name: CrayFish
+    value: 120
+    rarity: Rare
+    rarityWeight: 60
+    caught: 1
+  - name: Frog
+    value: 500
+    rarity: UltraRare
+    rarityWeight: 5
+    caught: 1
   unlockedAreas: 
 --- !u!114 &1491780819
 MonoBehaviour:

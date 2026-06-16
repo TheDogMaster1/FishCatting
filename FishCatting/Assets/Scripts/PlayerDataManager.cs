@@ -28,15 +28,15 @@ public class PlayerDataManager : MonoBehaviour
             string json = File.ReadAllText(path);
             PlayerData loadedData = JsonUtility.FromJson<PlayerData>(json);
             GameManager.instance.money = loadedData.money;
-            if (loadedData.lakeFishList != null && loadedData.lakeFishList.Count > 0)
+            if (loadedData.lakeFishList != null && GameManager.instance.lakeFishList.Count < 1)
             {
                 GameManager.instance.lakeFishList = loadedData.lakeFishList;
             }
-            if (loadedData.seaFishList != null && loadedData.seaFishList.Count > 0)
+            if (loadedData.seaFishList != null && GameManager.instance.seaFishList.Count < 1)
             {
                 GameManager.instance.seaFishList = loadedData.seaFishList;
             }
-            if (loadedData.forestFishList != null && loadedData.forestFishList.Count > 0)
+            if (loadedData.forestFishList != null && GameManager.instance.forestFishList.Count < 1)
             {
                 GameManager.instance.forestFishList = loadedData.forestFishList;
             }
@@ -51,6 +51,18 @@ public class PlayerDataManager : MonoBehaviour
     }
     public void NewGame()
     {
+        foreach (var fish in GameManager.instance.lakeFishList)
+        {
+            fish.caught = false;
+        }
+        foreach (var fish in GameManager.instance.seaFishList)
+        {
+            fish.caught = false;
+        }
+        foreach (var fish in GameManager.instance.forestFishList)
+        {
+            fish.caught = false;
+        }
         PlayerData playerData = new()
         {
             money = 0,
