@@ -1,4 +1,3 @@
-using System.Data.SqlTypes;
 using System.IO;
 using UnityEngine;
 [RequireComponent(typeof(GameManager))]
@@ -53,6 +52,14 @@ public class PlayerDataManager : MonoBehaviour
         }
         else
         {
+            GameManager.instance.fishList = new()
+                {
+                    //test fish list change this to any fish you want
+                    new Fish(name: "CommonFish", value: 50, rarity: "Common", rarityWeight: 100),
+                    new Fish("UncommonFish", 75, "Uncommon", 50),
+                    new Fish("RareFish", 200, "Rare", 25),
+                    new Fish("LegendaryFish", 500, "Legendary", 5)
+                };
             Debug.Log("File not found!");
         }
     }
