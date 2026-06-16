@@ -1,18 +1,22 @@
 using UnityEngine;
 
-public class PosTest : MonoBehaviour
+public class CastingLine : MonoBehaviour
 {
     [SerializeField]
-    private GameObject testCubePrefab;
+    private GameObject bobber;
 
     private GetClickPosition clickPosition;
+    private FishCatching fishCatching;
 
     private Touch tap;
+
+    private bool bobberCasted = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         clickPosition = new();
+        fishCatching = GetComponent<FishCatching>();
     }
 
     // Update is called once per frame
@@ -34,12 +38,26 @@ public class PosTest : MonoBehaviour
 
     private void CastBobber()
     {
-        testCubePrefab.SetActive(!testCubePrefab.activeSelf);
-        if (!testCubePrefab.activeSelf)
+        bobber.SetActive(!bobber.activeSelf);
+        bobberCasted = !bobberCasted;
+        fishCatching.SetFishTime();
+        if (!bobber.activeSelf)
         {
-            testCubePrefab.transform.position = Vector3.zero;
+            bobber.transform.position = Vector3.zero;
+            fishCatching.ReelIn();
             return;
         }
-        testCubePrefab.transform.position = clickPosition.GetTapPos();
+        StartCoroutine(fishCatching.CastingLine());
+        bobber.transform.position = clickPosition.GetTapPos();
+    }
+
+    public bool GetCastingbool()
+    {
+        return bobberCasted;
+    }
+
+    public GameObject GetBobber()
+    {
+        return bobber;
     }
 }
