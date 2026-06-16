@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerDataManager))]
+[RequireComponent(typeof(CatchFishes))]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int money;
-    public List<Fish> fishList = new();
-    public List<int> unlockedAreas = new();
+    public List<Fish> lakeFishList = new();
+    public List<Fish> seaFishList = new();
+    public List<Fish> forestFishList = new();
+    public List<string> unlockedAreas = new();
     PlayerDataManager playerDataManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,11 +18,15 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         playerDataManager = GetComponent<PlayerDataManager>();
+        //unlocking all areas for testing by id Lake should always be unlocked but doesn't break anything if not unlocked
+        unlockedAreas.Add("Lake");
+        unlockedAreas.Add("Sea");
+        unlockedAreas.Add("Forest");
     }
     void Start()
     {
         playerDataManager.LoadGame();
-        if (fishList == null || fishList.Count == 0)
+        if (lakeFishList == null || lakeFishList.Count == 0)
         {
             Debug.Log("no fishies >:(");
         }

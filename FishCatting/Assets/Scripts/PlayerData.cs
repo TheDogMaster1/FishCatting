@@ -4,7 +4,9 @@ using System.Collections.Generic;
 public class PlayerData
 {
     public int money;
-    public List<Fish> fishList;
-    public List<int> unlockedAreas;
+    public List<Fish> lakeFishList;
+    public List<Fish> seaFishList;
+    public List<Fish> forestFishList;
+    public List<string> unlockedAreas;
 
 }
