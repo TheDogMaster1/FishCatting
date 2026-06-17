@@ -7,6 +7,10 @@ public class FishingMinigame : MonoBehaviour
     private Slider playerSlider;
     [SerializeField]
     private Slider fishslider;
+    [SerializeField]
+    private Slider timerSlider;
+    [SerializeField]
+    private GameObject miniGame;
 
     [Header("Player settings")]
     [SerializeField]
@@ -28,6 +32,19 @@ public class FishingMinigame : MonoBehaviour
     private int minTimeChange = 10;
     [SerializeField]
     private int maxTimeChange = 30;
+    [SerializeField]
+    private RectTransform fishWinArea;
+    [SerializeField, Range(1, 100)]
+    private int fishWinSize;
+
+    [Header("Timer slider settings")]
+    [SerializeField]
+    private float upTimerSpeed = 0.5f;
+    [SerializeField]
+    private float downTimerSpeed = 0.2f;
+    [SerializeField]
+    private float beginValue = 0.1f;
+    private float timerToBegin = 0;
 
     private float destinationValue = 0;
     private float fishTimer = 0;
@@ -35,17 +52,31 @@ public class FishingMinigame : MonoBehaviour
 
     [SerializeField]
     private bool inMiniGame = false;
+
+    private CatchFishes catchFish;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        fishWinArea.sizeDelta = new Vector2(0, fishWinSize);
+        catchFish = GetComponent<CatchFishes>();
+        //StartMiniGame();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!inMiniGame) return;
+        timerToBegin += Time.deltaTime;
         PlayerSlider();
         FishSlider();
+        if (timerToBegin > 0.5) TimerSlider();
+    }
+
+    public void StartMiniGame()
+    {
+        ResetMinigame();
+        miniGame.SetActive(true);
+        inMiniGame = true;
     }
 
     private void PlayerSlider()
@@ -75,12 +106,55 @@ public class FishingMinigame : MonoBehaviour
         fishTimer += Time.deltaTime;
         if (fishTimer > fishSwitchTime || Input.GetKeyDown(KeyCode.Space))
         {
-            destinationValue = Random.Range(fishslider.minValue, fishslider.maxValue);
+            destinationValue = Random.Range(fishslider.minValue + (float)fishWinSize / 200, fishslider.maxValue - (float)fishWinSize / 200);
             fishSwitchTime = Random.Range(minTimeChange, maxTimeChange);
             fishTimer = 0;
-            Debug.Log(destinationValue);
+            //Debug.Log(destinationValue);
+            //Debug.Log(new Vector2(fishslider.minValue + (float)fishWinSize / 200, fishslider.maxValue - (float)fishWinSize / 200));
         }
         if (Mathf.Abs(destinationValue - fishslider.value) > 0.01) fishslider.value += fishSpeed * Mathf.Sign(destinationValue - fishslider.value) * Time.deltaTime;
+    }
+
+    private void TimerSlider()
+    {
+        if (playerSlider.value + 0.05f > fishslider.value - (float)fishWinSize / 200 && playerSlider.value - 0.05f < fishslider.value + (float)fishWinSize / 200)
+        {
+            timerSlider.value += upTimerSpeed * Time.deltaTime;
+            //Debug.Log("winning");
+        }
+        else timerSlider.value -= downTimerSpeed * Time.deltaTime;
+        if (timerSlider.value == 0)
+        {
+            FinishMiniGame(false);
+        }
+        else if (timerSlider.value == 1)
+        {
+            FinishMiniGame(true);
+        }
+    }
+
+    private void ResetMinigame()
+    {
+        playerSlider.value = 0;
+        timerToBegin = 0;
+        fishTimer = 0;
+        fishSwitchTime = 1f;
+        destinationValue = fishslider.minValue + (float)fishWinSize / 200;
+        fishslider.value = destinationValue;
+        timerSlider.value = beginValue;
+    }
+
+    private void FinishMiniGame(bool ifWon)
+    {
+        ResetMinigame();
+        inMiniGame = false;
+        if (ifWon)
+        {
+            //Debug.Log("Win :D");
+            catchFish.BeginFishing();
+        }
+        else Debug.Log("Lose D:"); // TODO: add something to show that you lost
+        miniGame.SetActive(false);
     }
 
     public bool BoolMiniGame()
