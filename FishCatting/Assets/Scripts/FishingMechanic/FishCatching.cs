@@ -5,6 +5,7 @@ public class FishCatching : MonoBehaviour
 {
     private CastingLine casting;
     private CatchFishes catchFish;
+    private FishingMinigame minigame;
     private GameObject bobber;
     private Animator animator;
 
@@ -31,6 +32,7 @@ public class FishCatching : MonoBehaviour
         bobber = casting.GetBobber();
         animator = bobber.GetComponentInChildren<Animator>();
         catchFish = GetComponent<CatchFishes>();
+        minigame = GetComponent<FishingMinigame>();
     }
 
     public IEnumerator CastingLine()
@@ -62,7 +64,8 @@ public class FishCatching : MonoBehaviour
         {
             Debug.Log("Yay Yippee you did it yaayayayayay");
             //start minigame
-            catchFish.BeginFishing();
+            minigame.StartMiniGame();
+            //catchFish.BeginFishing();
             ResetBobber();
             fishBitten = false;
         }

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768ef59af99096842972ee904713d7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishTestScript
+  fishLocation: 0
 --- !u!114 &6762295381230592293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,8 +104,100 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   money: 0
-  fishList: []
-  unlockedAreas: 
+  lakeFishList:
+  - name: Trout
+    value: 20
+    rarity: Common
+    rarityWeight: 100
+    caught: 0
+  - name: Carp
+    value: 25
+    rarity: Common
+    rarityWeight: 95
+    caught: 0
+  - name: Crappie
+    value: 30
+    rarity: Common
+    rarityWeight: 80
+    caught: 0
+  - name: FishCat
+    value: 50
+    rarity: Rare
+    rarityWeight: 45
+    caught: 0
+  - name: GoldFish
+    value: 60
+    rarity: Rare
+    rarityWeight: 40
+    caught: 0
+  - name: Crab
+    value: 250
+    rarity: UltraRare
+    rarityWeight: 10
+    caught: 0
+  seaFishList:
+  - name: Mackerel
+    value: 30
+    rarity: Common
+    rarityWeight: 130
+    caught: 0
+  - name: Ray
+    value: 40
+    rarity: Common
+    rarityWeight: 120
+    caught: 0
+  - name: Bass
+    value: 45
+    rarity: Common
+    rarityWeight: 110
+    caught: 0
+  - name: Tuna
+    value: 90
+    rarity: Rare
+    rarityWeight: 40
+    caught: 0
+  - name: Squid
+    value: 115
+    rarity: Rare
+    rarityWeight: 35
+    caught: 0
+  - name: Sunfish
+    value: 350
+    rarity: UltraRare
+    rarityWeight: 6
+    caught: 0
+  forestFishList:
+  - name: Pike
+    value: 50
+    rarity: Common
+    rarityWeight: 175
+    caught: 0
+  - name: Catfish
+    value: 60
+    rarity: Common
+    rarityWeight: 160
+    caught: 0
+  - name: Eel
+    value: 65
+    rarity: Common
+    rarityWeight: 150
+    caught: 0
+  - name: Salmon
+    value: 80
+    rarity: Rare
+    rarityWeight: 75
+    caught: 0
+  - name: CrayFish
+    value: 120
+    rarity: Rare
+    rarityWeight: 60
+    caught: 0
+  - name: Frog
+    value: 500
+    rarity: UltraRare
+    rarityWeight: 5
+    caught: 0
+  unlockedAreas: []
 --- !u!114 &3757609627641815389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,11 +212,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishingMinigame
   playerSlider: {fileID: 0}
   fishslider: {fileID: 0}
+  timerSlider: {fileID: 0}
+  miniGame: {fileID: 0}
+  testText: {fileID: 0}
   upSpeedChange: 1.5
   downSpeedChange: 1
   maxUpSpeed: 1
   maxDownSpeed: 1
-  fishSpeed: 0.2
-  minTimeChange: 10
-  maxTimeChange: 30
-  inMiniGame: 1
+  fishSpeed: 0.4
+  minTimeChange: 1
+  maxTimeChange: 5
+  fishWinArea: {fileID: 0}
+  fishWinSize: 40
+  upTimerSpeed: 0.5
+  downTimerSpeed: 0.2
+  beginValue: 0.1
+  inMiniGame: 0
