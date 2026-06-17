@@ -32,15 +32,18 @@ public class PlayerDataManager : MonoBehaviour
             {
                 GameManager.instance.lakeFishList = loadedData.lakeFishList;
             }
-            if (loadedData.seaFishList != null  && loadedData.seaFishList.Count != 0)
+            if (loadedData.seaFishList != null && loadedData.seaFishList.Count != 0)
             {
                 GameManager.instance.seaFishList = loadedData.seaFishList;
             }
-            if (loadedData.forestFishList != null  && loadedData.forestFishList.Count != 0)
+            if (loadedData.forestFishList != null && loadedData.forestFishList.Count != 0)
             {
                 GameManager.instance.forestFishList = loadedData.forestFishList;
             }
-            GameManager.instance.unlockedAreas = loadedData.unlockedAreas;
+            if (loadedData.unlockedAreas != null && loadedData.unlockedAreas.Count != 0)
+            {
+                GameManager.instance.unlockedAreas = loadedData.unlockedAreas;
+            }
         }
         else
         {
@@ -62,13 +65,20 @@ public class PlayerDataManager : MonoBehaviour
         {
             fish.caught = false;
         }
+        foreach (var area in GameManager.instance.unlockedAreas)
+        {
+            if (area.name != "Lake")
+            {
+                area.unlocked = false;
+            }
+        }
         PlayerData playerData = new()
         {
             money = 0,
             lakeFishList = null,
             seaFishList = null,
             forestFishList = null,
-            unlockedAreas = new()
+            unlockedAreas = null
         };
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
