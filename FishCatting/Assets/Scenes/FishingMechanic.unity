@@ -811,22 +811,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917943188164981753, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3866303656709250829, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -907,18 +891,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6412145396921845334, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7969752708919133467, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7969752708919133467, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.065
-      objectReference: {fileID: 0}
     - target: {fileID: 8437683247711832619, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -936,6 +908,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: fishTextTest
+      value: 
+      objectReference: {fileID: 126982354}
     - target: {fileID: 1607020610874743727, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -981,17 +957,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 145811075}
     - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
-      propertyPath: testText
-      value: 
-      objectReference: {fileID: 126982354}
-    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: fishslider
       value: 
       objectReference: {fileID: 519879877}
-    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
-      propertyPath: inMiniGame
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: fishWinArea
       value: 

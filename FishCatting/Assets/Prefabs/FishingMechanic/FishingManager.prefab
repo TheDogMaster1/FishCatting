@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768ef59af99096842972ee904713d7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishTestScript
-  fishLocation: 0
 --- !u!114 &6762295381230592293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,9 +75,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishCatching
   minWait: 3
-  maxWait: 20
+  maxWait: 10
   minFakeWait: 2
-  maxFakeWait: 10
+  maxFakeWait: 5
 --- !u!114 &2847127893633663200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169ec27f6e5baba4db227ea56db1cfa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  fishTextTest: {fileID: 0}
   money: 0
   lakeFishList:
   - name: Trout
@@ -198,6 +198,7 @@ MonoBehaviour:
     rarityWeight: 5
     caught: 0
   unlockedAreas: []
+  locatedLocation: Lake
 --- !u!114 &3757609627641815389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +215,6 @@ MonoBehaviour:
   fishslider: {fileID: 0}
   timerSlider: {fileID: 0}
   miniGame: {fileID: 0}
-  testText: {fileID: 0}
   upSpeedChange: 1.5
   downSpeedChange: 1
   maxUpSpeed: 1

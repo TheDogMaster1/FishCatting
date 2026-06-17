@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +11,6 @@ public class FishingMinigame : MonoBehaviour
     private Slider timerSlider;
     [SerializeField]
     private GameObject miniGame;
-
-    public TextMeshProUGUI testText;
 
     [Header("Player settings")]
     [SerializeField]
@@ -112,7 +109,7 @@ public class FishingMinigame : MonoBehaviour
             destinationValue = Random.Range(fishslider.minValue + (float)fishWinSize / 200, fishslider.maxValue - (float)fishWinSize / 200);
             fishSwitchTime = Random.Range(minTimeChange, maxTimeChange);
             fishTimer = 0;
-            Debug.Log(destinationValue);
+            //Debug.Log(destinationValue);
             //Debug.Log(new Vector2(fishslider.minValue + (float)fishWinSize / 200, fishslider.maxValue - (float)fishWinSize / 200));
         }
         if (Mathf.Abs(destinationValue - fishslider.value) > 0.01) fishslider.value += fishSpeed * Mathf.Sign(destinationValue - fishslider.value) * Time.deltaTime;
@@ -123,10 +120,8 @@ public class FishingMinigame : MonoBehaviour
         if (playerSlider.value + 0.05f > fishslider.value - (float)fishWinSize / 200 && playerSlider.value - 0.05f < fishslider.value + (float)fishWinSize / 200)
         {
             timerSlider.value += upTimerSpeed * Time.deltaTime;
-            Debug.Log("winning");
-            testText.text = "Winning";
+            //Debug.Log("winning");
         }
-        //else testText.text = "Losing";
         else timerSlider.value -= downTimerSpeed * Time.deltaTime;
         if (timerSlider.value == 0)
         {
@@ -155,7 +150,7 @@ public class FishingMinigame : MonoBehaviour
         inMiniGame = false;
         if (ifWon)
         {
-            Debug.Log("Win :D");
+            //Debug.Log("Win :D");
             catchFish.BeginFishing();
         }
         else Debug.Log("Lose D:"); // TODO: add something to show that you lost
