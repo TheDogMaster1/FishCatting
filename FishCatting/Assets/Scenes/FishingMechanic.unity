@@ -119,6 +119,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &117326812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8254245116584185299, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+  m_PrefabInstance: {fileID: 7609928105078254605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &126982354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1817949601259881019, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+  m_PrefabInstance: {fileID: 7609928105078254605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &145811075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2917943188164981753, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+  m_PrefabInstance: {fileID: 7609928105078254605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &171695688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9084350484850731705, guid: 7a0649bc243ddd147a570e0bdf3b07f9, type: 3}
@@ -703,6 +730,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1346072662 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+  m_PrefabInstance: {fileID: 7609928105078254605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1765091061 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1100262223412872572, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
@@ -780,7 +812,19 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917943188164981753, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3866303656709250829, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
@@ -863,13 +907,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5591922076920832242, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6412145396921845334, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969752708919133467, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969752708919133467, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.065
       objectReference: {fileID: 0}
     - target: {fileID: 8437683247711832619, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
       propertyPath: m_Name
@@ -929,13 +977,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
-      propertyPath: fishSpeed
-      value: 0.2
-      objectReference: {fileID: 0}
+      propertyPath: miniGame
+      value: 
+      objectReference: {fileID: 145811075}
+    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: testText
+      value: 
+      objectReference: {fileID: 126982354}
     - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: fishslider
       value: 
       objectReference: {fileID: 519879877}
+    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: inMiniGame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: fishWinArea
+      value: 
+      objectReference: {fileID: 1346072662}
+    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: timerSlider
+      value: 
+      objectReference: {fileID: 117326812}
     - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: playerSlider
       value: 
