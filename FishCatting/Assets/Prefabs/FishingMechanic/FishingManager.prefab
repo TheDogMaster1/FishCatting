@@ -107,94 +107,94 @@ MonoBehaviour:
   lakeFishList:
   - name: Trout
     value: 20
-    rarity: Common
+    rarity: 0
     rarityWeight: 100
     caught: 0
   - name: Carp
     value: 25
-    rarity: Common
+    rarity: 0
     rarityWeight: 95
     caught: 0
   - name: Crappie
     value: 30
-    rarity: Common
+    rarity: 0
     rarityWeight: 80
     caught: 0
   - name: FishCat
     value: 50
-    rarity: Rare
+    rarity: 1
     rarityWeight: 45
     caught: 0
   - name: GoldFish
     value: 60
-    rarity: Rare
+    rarity: 1
     rarityWeight: 40
     caught: 0
   - name: Crab
     value: 250
-    rarity: UltraRare
+    rarity: 2
     rarityWeight: 10
     caught: 0
   seaFishList:
   - name: Mackerel
     value: 30
-    rarity: Common
+    rarity: 0
     rarityWeight: 130
     caught: 0
   - name: Ray
     value: 40
-    rarity: Common
+    rarity: 0
     rarityWeight: 120
     caught: 0
   - name: Bass
     value: 45
-    rarity: Common
+    rarity: 0
     rarityWeight: 110
     caught: 0
   - name: Tuna
     value: 90
-    rarity: Rare
+    rarity: 1
     rarityWeight: 40
     caught: 0
   - name: Squid
     value: 115
-    rarity: Rare
+    rarity: 1
     rarityWeight: 35
     caught: 0
   - name: Sunfish
     value: 350
-    rarity: UltraRare
+    rarity: 2
     rarityWeight: 6
     caught: 0
   forestFishList:
   - name: Pike
     value: 50
-    rarity: Common
+    rarity: 0
     rarityWeight: 175
     caught: 0
   - name: Catfish
     value: 60
-    rarity: Common
+    rarity: 0
     rarityWeight: 160
     caught: 0
   - name: Eel
     value: 65
-    rarity: Common
+    rarity: 0
     rarityWeight: 150
     caught: 0
   - name: Salmon
     value: 80
-    rarity: Rare
+    rarity: 1
     rarityWeight: 75
     caught: 0
   - name: CrayFish
     value: 120
-    rarity: Rare
+    rarity: 1
     rarityWeight: 60
     caught: 0
   - name: Frog
     value: 500
-    rarity: UltraRare
+    rarity: 2
     rarityWeight: 5
     caught: 0
   unlockedAreas: []
