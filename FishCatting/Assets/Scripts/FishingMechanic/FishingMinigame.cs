@@ -140,17 +140,13 @@ public class FishingMinigame : MonoBehaviour
 
     private void SetSettings()
     {
-        switch (fish.rarity)
+        foreach (var settings in miniGameSettings)
         {
-            case Fish.Rarity.Common:
-                usedSettings = miniGameSettings[0];
-                break;
-            case Fish.Rarity.Rare:
-                usedSettings = miniGameSettings[1];
-                break;
-            case Fish.Rarity.UltraRare:
-                usedSettings = miniGameSettings[2];
-                break;
+            if (settings.rarity == fish.rarity)
+            {
+                usedSettings = settings;
+                return;
+            }
         }
     }
 
