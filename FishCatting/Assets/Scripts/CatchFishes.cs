@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(GameManager))]
@@ -20,6 +19,20 @@ public class CatchFishes : MonoBehaviour
             currentfish.caught = true;
         }
         GameManager.instance.money += currentfish.value;
+    }
+
+    public void FishCatched(Fish currentFish)
+    {
+        if (currentFish.caught == true)
+        {
+            GameManager.instance.fishTextTest.text = $"caught an {currentFish.name} with value of {currentFish.value} and rarity of {currentFish.rarity} (duplicate)";
+        }
+        else
+        {
+            GameManager.instance.fishTextTest.text = $"caught an new fish called {currentFish.name} with value of {currentFish.value} and rarity of {currentFish.rarity}";
+            currentFish.caught = true;
+        }
+        GameManager.instance.money += currentFish.value;
     }
 
     public Fish CatchFish()

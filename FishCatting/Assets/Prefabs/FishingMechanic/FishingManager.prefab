@@ -228,5 +228,19 @@ MonoBehaviour:
     upTimerSpeed: 1
     downTimerSpeed: 0.9
     beginValue: 0.1
+  - fishSpeed: 2
+    minTimeChange: 5
+    maxTimeChange: 10
+    fishWinSize: 30
+    upTimerSpeed: 1
+    downTimerSpeed: 0.9
+    beginValue: 0.1
+  - fishSpeed: 2
+    minTimeChange: 2
+    maxTimeChange: 4
+    fishWinSize: 20
+    upTimerSpeed: 1
+    downTimerSpeed: 0.9
+    beginValue: 0.1
   testSetSettings: 0
   inMiniGame: 0

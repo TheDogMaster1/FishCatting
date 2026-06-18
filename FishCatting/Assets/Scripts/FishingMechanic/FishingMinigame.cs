@@ -33,7 +33,6 @@ public class FishingMinigame : MonoBehaviour
     private FishingMinigameSettings[] miniGameSettings;
 
     private FishingMinigameSettings usedSettings;
-    public float testSetSettings;
 
     private float timerToBegin = 0;
 
@@ -45,6 +44,7 @@ public class FishingMinigame : MonoBehaviour
     private bool inMiniGame = false;
 
     private CatchFishes catchFish;
+    private Fish fish = new("newfish", 0, Fish.Rarity.Common, 100);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -125,6 +125,8 @@ public class FishingMinigame : MonoBehaviour
 
     private void ResetMinigame()
     {
+        fish = catchFish.CatchFish();
+        Debug.Log("Rarity is: " + fish.rarity);
         SetSettings();
         fishWinArea.sizeDelta = new Vector2(0, usedSettings.fishWinSize);
         playerSlider.value = 0;
@@ -138,10 +140,16 @@ public class FishingMinigame : MonoBehaviour
 
     private void SetSettings()
     {
-        switch (testSetSettings)
+        switch (fish.rarity)
         {
-            case 0:
+            case Fish.Rarity.Common:
                 usedSettings = miniGameSettings[0];
+                break;
+            case Fish.Rarity.Rare:
+                usedSettings = miniGameSettings[1];
+                break;
+            case Fish.Rarity.UltraRare:
+                usedSettings = miniGameSettings[2];
                 break;
         }
     }
@@ -153,7 +161,7 @@ public class FishingMinigame : MonoBehaviour
         if (ifWon)
         {
             //Debug.Log("Win :D");
-            catchFish.BeginFishing();
+            catchFish.FishCatched(fish);
         }
         else Debug.Log("Lose D:"); // TODO: add something to show that you lost
         miniGame.SetActive(false);
