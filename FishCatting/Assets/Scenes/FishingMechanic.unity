@@ -972,6 +972,14 @@ PrefabInstance:
       propertyPath: playerSlider
       value: 
       objectReference: {fileID: 1765091061}
+    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: miniGameSettings.Array.data[1].rarity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757609627641815389, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: miniGameSettings.Array.data[2].rarity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6145465572298174609, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: m_Name
       value: FishingManager

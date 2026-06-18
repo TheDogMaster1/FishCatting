@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using static Fish;
 
 [Serializable]
 public class FishingMinigameSettings
 {
+    public Rarity rarity;
     [Header("Fish slider settings")]
     public float fishSpeed = 1;
     public int minTimeChange = 10;
