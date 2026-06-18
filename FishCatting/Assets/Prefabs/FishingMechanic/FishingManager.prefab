@@ -219,12 +219,14 @@ MonoBehaviour:
   downSpeedChange: 1
   maxUpSpeed: 1
   maxDownSpeed: 1
-  fishSpeed: 0.4
-  minTimeChange: 1
-  maxTimeChange: 5
   fishWinArea: {fileID: 0}
-  fishWinSize: 40
-  upTimerSpeed: 0.5
-  downTimerSpeed: 0.2
-  beginValue: 0.1
+  miniGameSettings:
+  - fishSpeed: 1
+    minTimeChange: 10
+    maxTimeChange: 15
+    fishWinSize: 40
+    upTimerSpeed: 1
+    downTimerSpeed: 0.9
+    beginValue: 0.1
+  testSetSettings: 0
   inMiniGame: 0
