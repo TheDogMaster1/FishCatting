@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     public List<Fish> seaFishList = new();
     public List<Fish> forestFishList = new();
     public List<Area> unlockedAreas = new();
-
     public string locatedLocation;
+    [HideInInspector]
+    public GameObject createdFish;
     PlayerDataManager playerDataManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,9 +23,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         playerDataManager = GetComponent<PlayerDataManager>();
-    }
-    void Start()
-    {
         playerDataManager.LoadGame();
     }
     public void ChangeLocation(int locationID)
@@ -62,5 +60,9 @@ public class GameManager : MonoBehaviour
             money -= moneyCost;
             return true;
         }
+    }
+    public void RemoveCreatedFish()
+    {
+        Destroy(createdFish);
     }
 }
