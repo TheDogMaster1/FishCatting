@@ -6,6 +6,7 @@ public class Fish
 {
     public string name;
     public int value;
+    public GameObject fishModel;
     public enum Rarity
     {
         Common,

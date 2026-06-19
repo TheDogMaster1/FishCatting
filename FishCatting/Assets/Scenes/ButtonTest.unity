@@ -3519,6 +3519,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 869568268551702988, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
+      propertyPath: fishTextTest
+      value: 
+      objectReference: {fileID: 458927225}
+    - target: {fileID: 869568268551702988, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: unlockedAreas.Array.size
       value: 4
       objectReference: {fileID: 0}
