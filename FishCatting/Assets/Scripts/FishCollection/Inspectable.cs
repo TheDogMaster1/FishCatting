@@ -14,23 +14,7 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
     {
         mainCamera = FindFirstObjectByType<Camera>();
         AddPhysicsRaycaster();
-        GetAllFish();
-    }
-
-    private void GetAllFish()
-    {
-        foreach (var lakeFish in GameManager.instance.lakeFishList)
-        {
-            allFishes.Add(lakeFish);
-        }
-        foreach (var seaFish in GameManager.instance.seaFishList)
-        {
-            allFishes.Add(seaFish);
-        }
-        foreach (var forestFish in GameManager.instance.forestFishList)
-        {
-            allFishes.Add(forestFish);
-        }
+        allFishes = GameManager.instance.GetAllFish();
     }
 
     public GameObject ShowFish(Fish fish)
