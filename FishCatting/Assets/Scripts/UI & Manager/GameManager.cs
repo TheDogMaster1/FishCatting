@@ -65,4 +65,21 @@ public class GameManager : MonoBehaviour
     {
         Destroy(createdFish);
     }
+    public List<Fish> GetAllFish()
+    {
+        List<Fish> allFishes = new();
+        foreach (var lakeFish in GameManager.instance.lakeFishList)
+        {
+            allFishes.Add(lakeFish);
+        }
+        foreach (var seaFish in GameManager.instance.seaFishList)
+        {
+            allFishes.Add(seaFish);
+        }
+        foreach (var forestFish in GameManager.instance.forestFishList)
+        {
+            allFishes.Add(forestFish);
+        }
+        return allFishes;
+    }
 }
