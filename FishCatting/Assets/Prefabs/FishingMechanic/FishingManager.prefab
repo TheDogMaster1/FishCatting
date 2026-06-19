@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PosTest
   bobber: {fileID: 0}
+  bobberModel: {fileID: 0}
 --- !u!114 &9173682360724216230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,8 +77,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishCatching
   minWait: 3
   maxWait: 10
-  minFakeWait: 2
-  maxFakeWait: 5
+  minFakeWait: 3
+  maxFakeWait: 6
 --- !u!114 &2847127893633663200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,26 +222,28 @@ MonoBehaviour:
   maxDownSpeed: 1
   fishWinArea: {fileID: 0}
   miniGameSettings:
-  - fishSpeed: 1
+  - rarity: 0
+    fishSpeed: 1
     minTimeChange: 10
     maxTimeChange: 15
     fishWinSize: 40
     upTimerSpeed: 1
     downTimerSpeed: 0.9
     beginValue: 0.1
-  - fishSpeed: 2
+  - rarity: 1
+    fishSpeed: 2
     minTimeChange: 5
     maxTimeChange: 10
     fishWinSize: 30
     upTimerSpeed: 1
     downTimerSpeed: 0.9
     beginValue: 0.1
-  - fishSpeed: 2
+  - rarity: 2
+    fishSpeed: 2
     minTimeChange: 2
     maxTimeChange: 4
     fishWinSize: 20
     upTimerSpeed: 1
     downTimerSpeed: 0.9
     beginValue: 0.1
-  testSetSettings: 0
   inMiniGame: 0

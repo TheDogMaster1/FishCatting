@@ -4,6 +4,8 @@ public class CastingLine : MonoBehaviour
 {
     [SerializeField]
     private GameObject bobber;
+    [SerializeField]
+    private GameObject bobberModel;
 
     private GetClickPosition clickPosition;
     private FishCatching fishCatching;
@@ -42,17 +44,21 @@ public class CastingLine : MonoBehaviour
 
     private void CastBobber()
     {
+        if (clickPosition.GetTapPos("AllowCast") == Vector3.zero) return;
         bobber.SetActive(!bobber.activeSelf);
         bobberCasted = !bobberCasted;
-        fishCatching.SetFishTime();
         if (!bobber.activeSelf)
         {
             bobber.transform.position = Vector3.zero;
+            bobberModel.transform.position = Vector3.zero;
+            StopAllCoroutines();
             fishCatching.ReelIn();
             return;
         }
+        fishCatching.SetFishTime();
         StartCoroutine(fishCatching.CastingLine());
-        bobber.transform.position = clickPosition.GetTapPos();
+        bobber.transform.position = clickPosition.GetTapPos("AllowCast");
+        Debug.Log("Position " + clickPosition.GetTapPos("AllowCast"));
     }
 
     public bool GetCastingbool()

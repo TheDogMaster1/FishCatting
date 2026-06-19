@@ -59,7 +59,6 @@ public class FishCatching : MonoBehaviour
 
     public void ReelIn()
     {
-        StopAllCoroutines();
         if (fishBitten)
         {
             Debug.Log("Yay Yippee you did it yaayayayayay");
