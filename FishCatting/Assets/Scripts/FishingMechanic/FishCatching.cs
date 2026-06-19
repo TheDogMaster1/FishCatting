@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class FishCatching : MonoBehaviour
@@ -9,6 +10,9 @@ public class FishCatching : MonoBehaviour
     private GameObject bobber;
     private Animator animator;
 
+    [SerializeField]
+    private TextMeshProUGUI debugText;
+    private int fakebitesHappened;
 
     [Header("Cast Wait times")]
     [SerializeField]
@@ -35,9 +39,13 @@ public class FishCatching : MonoBehaviour
         minigame = GetComponent<FishingMinigame>();
     }
 
+    private void Update()
+    {
+        if (debugText != null) debugText.text = $"amount of fakebites: {fakeBitesAmount}  fakebites already happened: {fakebitesHappened}";
+    }
+
     public IEnumerator CastingLine()
     {
-        Debug.Log("Cast!!!");
         while (!fishBitten)
         {
             yield return new WaitForSeconds(Random.Range(minWait, maxWait + 1));
@@ -53,24 +61,24 @@ public class FishCatching : MonoBehaviour
     private IEnumerator FakeBob()
     {
         animator.SetTrigger("FakeBite");
-        Debug.Log("boo");
+        fakebitesHappened++;
         yield return new WaitForSeconds(Random.Range(minFakeWait, maxFakeWait + 1));
     }
 
     public void ReelIn()
     {
-        StopAllCoroutines();
+        fakebitesHappened = 0;
         if (fishBitten)
         {
             Debug.Log("Yay Yippee you did it yaayayayayay");
             //start minigame
             minigame.StartMiniGame();
             //catchFish.BeginFishing();
-            ResetBobber();
             fishBitten = false;
         }
         else
         {
+            StartCoroutine(casting.ThrowReel(casting.GetUnCassed().position, casting.GetBobber().transform.position, casting.GetReelInSpeed(), casting.GetReelInAngle()));
             Debug.Log("no fish lol");
         }
     }
@@ -83,19 +91,10 @@ public class FishCatching : MonoBehaviour
     public void SetFishTime()
     {
         fakeBitesAmount = Random.Range(0, 6);
-        Debug.Log(fakeBitesAmount);
     }
 
     public void SetBittenBool(bool pBool)
     {
         fishBitten = pBool;
-    }
-
-    private void ResetBobber()
-    {
-        foreach (Transform child in bobber.transform)
-        {
-            child.position = Vector3.zero;
-        }
     }
 }
