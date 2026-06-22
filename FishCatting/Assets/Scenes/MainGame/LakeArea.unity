@@ -842,7 +842,87 @@ PrefabInstance:
     - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: fishTextTest
       value: 
-      objectReference: {fileID: 1812875764}
+      objectReference: {fileID: 786405716}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: locatedLocation
+      value: Lake
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: seaFishList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: lakeFishList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: unlockedAreas.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: seaFishList.Array.data[5].name
+      value: SunFish
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: unlockedAreas.Array.data[0].name
+      value: Lake
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: unlockedAreas.Array.data[1].cost
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: unlockedAreas.Array.data[1].name
+      value: Sea
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: unlockedAreas.Array.data[2].cost
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: unlockedAreas.Array.data[2].name
+      value: Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.data[1].name
+      value: CatFish
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.data[0].caught
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.data[1].caught
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.data[2].caught
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.data[3].caught
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.data[4].caught
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: forestFishList.Array.data[5].caught
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: lakeFishList.Array.data[0].fishModel
+      value: 
+      objectReference: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    - target: {fileID: 1068344129911692230, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: unlockedAreas.Array.data[0].unlocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1607020610874743727, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1718,17 +1798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a961850ec8312a4f813680373a42497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FailFish
---- !u!114 &1812875764 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7245675340086699163, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-  m_PrefabInstance: {fileID: 1542792381}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1851252228
 PrefabInstance:
   m_ObjectHideFlags: 0

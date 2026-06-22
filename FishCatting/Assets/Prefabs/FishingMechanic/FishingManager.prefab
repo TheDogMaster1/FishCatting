@@ -84,11 +84,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishCatching
   bobAnimationEvents: {fileID: 0}
   debugText: {fileID: 0}
-  minWait: 3
-  maxWait: 10
+  minWait: 1
+  maxWait: 1
   minFakeWait: 3
   maxFakeWait: 6
-  maxFakeBites: 6
+  maxFakeBites: 0
 --- !u!114 &2847127893633663200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   lakeFishList:
   - name: Trout
     value: 20
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 0
     rarityWeight: 100
     caught: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
     rarity: 1
     rarityWeight: 35
     caught: 0
-  - name: Sunfish
+  - name: SunFish
     value: 350
     fishModel: {fileID: 0}
     rarity: 2
@@ -195,38 +195,47 @@ MonoBehaviour:
     fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 175
-    caught: 0
-  - name: Catfish
+    caught: 1
+  - name: CatFish
     value: 60
     fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 160
-    caught: 0
+    caught: 1
   - name: Eel
     value: 65
     fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 150
-    caught: 0
+    caught: 1
   - name: Salmon
     value: 80
     fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 75
-    caught: 0
+    caught: 1
   - name: CrayFish
     value: 120
     fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 60
-    caught: 0
+    caught: 1
   - name: Frog
     value: 500
     fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 5
-    caught: 0
-  unlockedAreas: []
+    caught: 1
+  unlockedAreas:
+  - name: Lake
+    cost: 0
+    unlocked: 1
+  - name: Sea
+    cost: 600
+    unlocked: 0
+  - name: Forest
+    cost: 2500
+    unlocked: 0
   locatedLocation: Lake
   createdFish: {fileID: 0}
 --- !u!114 &3757609627641815389
