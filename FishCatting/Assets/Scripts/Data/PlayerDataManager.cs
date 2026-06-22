@@ -3,6 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(GameManager))]
 public class PlayerDataManager : MonoBehaviour
 {
+    public static PlayerDataManager instance;
+    void Awake()
+    {
+        instance = this;
+    }
     public void SaveGame()
     {
         //we put the data into a json called playerData.json for loading next time the user plays.
@@ -12,7 +17,8 @@ public class PlayerDataManager : MonoBehaviour
             lakeFishList = GameManager.instance.lakeFishList,
             seaFishList = GameManager.instance.seaFishList,
             forestFishList = GameManager.instance.forestFishList,
-            unlockedAreas = GameManager.instance.unlockedAreas
+            unlockedAreas = GameManager.instance.unlockedAreas,
+            locatedLocation = GameManager.instance.locatedLocation
         };
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
@@ -43,6 +49,14 @@ public class PlayerDataManager : MonoBehaviour
             if (loadedData.unlockedAreas != null && loadedData.unlockedAreas.Count != 0)
             {
                 GameManager.instance.unlockedAreas = loadedData.unlockedAreas;
+            }
+            if(loadedData.locatedLocation == null)
+            {
+                GameManager.instance.locatedLocation = "Lake";
+            }
+            else
+            {
+                GameManager.instance.locatedLocation = loadedData.locatedLocation;
             }
         }
         else
@@ -78,7 +92,8 @@ public class PlayerDataManager : MonoBehaviour
             lakeFishList = null,
             seaFishList = null,
             forestFishList = null,
-            unlockedAreas = null
+            unlockedAreas = null,
+            locatedLocation = "Lake"
         };
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";

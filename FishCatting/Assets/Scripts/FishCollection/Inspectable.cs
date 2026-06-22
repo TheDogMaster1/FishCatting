@@ -13,7 +13,6 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
     void Start()
     {
         mainCamera = FindFirstObjectByType<Camera>();
-        AddPhysicsRaycaster();
         allFishes = GameManager.instance.GetAllFish();
     }
 
@@ -30,21 +29,18 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
             return null;
         }
     }
-    private void AddPhysicsRaycaster()
-    {
-        PhysicsRaycaster physicsRaycaster = FindFirstObjectByType<Physics2DRaycaster>();
-        if (physicsRaycaster == null)
-        {
-            Camera.main.gameObject.AddComponent<PhysicsRaycaster>();
-        }
-    }
     public void OnPointerDown(PointerEventData eventData)
+    {
+        FindAndShowFish();
+    }
+
+    private void FindAndShowFish()
     {
         foreach (var fish in allFishes)
         {
             if (gameObject.name == fish.name && GameManager.instance.createdFish == null)
             {
-                if((GameManager.instance.createdFish = ShowFish(fish)) != null)
+                if ((GameManager.instance.createdFish = ShowFish(fish)) != null)
                 {
                     GameManager.instance.createdFish.AddComponent<RotateInspection>();
                 }
@@ -58,5 +54,4 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
         Debug.LogWarning("found no fish >:( please ensure that the objectname is the same as one of the fishes in gamemanager");
         return;
     }
-
 }

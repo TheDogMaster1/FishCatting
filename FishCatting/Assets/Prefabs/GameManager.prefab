@@ -51,93 +51,111 @@ MonoBehaviour:
   lakeFishList:
   - name: Trout
     value: 20
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 0
     rarityWeight: 100
     caught: 0
   - name: Carp
     value: 25
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 95
     caught: 0
   - name: Crappie
     value: 30
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 80
     caught: 0
   - name: FishCat
     value: 50
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 45
     caught: 0
   - name: GoldFish
     value: 60
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 40
     caught: 0
   - name: Crab
     value: 250
+    fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 10
     caught: 0
   seaFishList:
   - name: Mackerel
     value: 30
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 130
     caught: 0
   - name: Ray
     value: 40
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 120
     caught: 0
   - name: Bass
     value: 45
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 110
     caught: 0
   - name: Tuna
     value: 90
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 40
     caught: 0
   - name: Squid
     value: 115
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 35
     caught: 0
-  - name: Sunfish
+  - name: SunFish
     value: 350
+    fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 6
     caught: 0
   forestFishList:
   - name: Pike
     value: 50
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 175
     caught: 1
-  - name: Catfish
+  - name: CatFish
     value: 60
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 160
     caught: 1
   - name: Eel
     value: 65
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 150
     caught: 1
   - name: Salmon
     value: 80
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 75
     caught: 1
   - name: CrayFish
     value: 120
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 60
     caught: 1
   - name: Frog
     value: 500
+    fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 5
     caught: 1
@@ -152,6 +170,7 @@ MonoBehaviour:
     cost: 2500
     unlocked: 0
   locatedLocation: Lake
+  createdFish: {fileID: 0}
 --- !u!114 &6711162408066979528
 MonoBehaviour:
   m_ObjectHideFlags: 0

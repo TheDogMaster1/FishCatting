@@ -8,5 +8,6 @@ public class PlayerData
     public List<Fish> seaFishList;
     public List<Fish> forestFishList;
     public List<Area> unlockedAreas;
+    public string locatedLocation;
 
 }

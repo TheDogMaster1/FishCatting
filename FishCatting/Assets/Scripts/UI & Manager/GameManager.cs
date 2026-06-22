@@ -16,14 +16,12 @@ public class GameManager : MonoBehaviour
     public string locatedLocation;
     [HideInInspector]
     public GameObject createdFish;
-    PlayerDataManager playerDataManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         instance = this;
-        playerDataManager = GetComponent<PlayerDataManager>();
-        playerDataManager.LoadGame();
+        PlayerDataManager.instance.LoadGame();
     }
     public void ChangeLocation(int locationID)
     {
@@ -32,21 +30,43 @@ public class GameManager : MonoBehaviour
             if (unlockedAreas[locationID].unlocked == true)
             {
                 locatedLocation = unlockedAreas[locationID].name;
+                if (fishTextTest != null)
+                {
+                    fishTextTest.text = "already own area!";
+                }
             }
             else if (Buy(unlockedAreas[locationID].cost))
             {
                 locatedLocation = unlockedAreas[locationID].name;
                 unlockedAreas[locationID].unlocked = true;
-                fishTextTest.text = $"bought new area: {unlockedAreas[locationID].name}!";
+                if (fishTextTest != null)
+                {
+                    fishTextTest.text = $"bought new area: {unlockedAreas[locationID].name}!";
+                }
+                PlayerDataManager.instance.SaveGame();
             }
             else
             {
-                fishTextTest.text = "area too expensive!";
+                if (fishTextTest != null)
+                {
+                    fishTextTest.text = "area too expensive!";
+                }
             }
         }
         else
         {
             Debug.LogWarning("area does not exist, please check if the id used in changing area is also the same as the array index of unlocked areas list in the inspector!");
+        }
+    }
+    public void ChangeStringArea(string AreaName)
+    {
+        foreach (var area in unlockedAreas)
+        {
+            if (area.name == AreaName)
+            {
+                locatedLocation = area.name;
+                return;
+            }
         }
     }
     public bool Buy(int moneyCost)
