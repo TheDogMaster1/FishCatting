@@ -125,7 +125,7 @@ Material:
     - _test: 0.75
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BeginPos: {r: -0.17493224, g: 17.55709, b: 0, a: 0}
+    - _BeginPos: {r: -5.0290146, g: 22.636497, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Regular: {r: 0, g: 0.0787333, b: 0.9811321, a: 1}
