@@ -4055,8 +4055,8 @@
     "m_ObjectId": "87d1b06a762d4fff902c6b6e3ab11e9d",
     "m_Title": "Length from beginpos",
     "m_Position": {
-        "x": -3009.000244140625,
-        "y": -217.00001525878907
+        "x": -3009.0,
+        "y": -217.0
     }
 }
 
@@ -4288,8 +4288,8 @@
     "m_ObjectId": "944b4ab844f3400ca5770a1a9a9fcb6d",
     "m_Title": "Positioning",
     "m_Position": {
-        "x": -2976.000244140625,
-        "y": 64.00001525878906
+        "x": -2976.0,
+        "y": 63.999977111816409
     }
 }
 
@@ -4415,7 +4415,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Occlusion",
     "m_StageCapability": 2,
-    "m_Value": 0.0,
+    "m_Value": 0.5,
     "m_DefaultValue": 1.0,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -4708,8 +4708,8 @@
     "m_ObjectId": "a3a0b65d19ff49d5941923f11f8005e3",
     "m_Title": "Time",
     "m_Position": {
-        "x": -1687.0001220703125,
-        "y": -282.0000305175781
+        "x": -1687.0,
+        "y": -282.0
     }
 }
 

@@ -63,6 +63,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PosTest
   bobber: {fileID: 0}
   bobberModel: {fileID: 0}
+  uncastPosition: {fileID: 0}
+  water: {fileID: 2100000, guid: b84312d996ace624ba343028c3598135, type: 2}
+  animator: {fileID: 0}
+  castAngle: 45
+  castSpeed: 1
+  reelInAngle: 60
+  reelInSpeed: 2
 --- !u!114 &9173682360724216230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,10 +82,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df48191cd8dd7ca42861f750247019ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishCatching
+  bobAnimationEvents: {fileID: 0}
+  debugText: {fileID: 0}
   minWait: 3
   maxWait: 10
   minFakeWait: 3
   maxFakeWait: 6
+  maxFakeBites: 6
 --- !u!114 &2847127893633663200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,98 +118,117 @@ MonoBehaviour:
   lakeFishList:
   - name: Trout
     value: 20
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 100
     caught: 0
   - name: Carp
     value: 25
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 95
     caught: 0
   - name: Crappie
     value: 30
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 80
     caught: 0
   - name: FishCat
     value: 50
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 45
     caught: 0
   - name: GoldFish
     value: 60
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 40
     caught: 0
   - name: Crab
     value: 250
+    fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 10
     caught: 0
   seaFishList:
   - name: Mackerel
     value: 30
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 130
     caught: 0
   - name: Ray
     value: 40
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 120
     caught: 0
   - name: Bass
     value: 45
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 110
     caught: 0
   - name: Tuna
     value: 90
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 40
     caught: 0
   - name: Squid
     value: 115
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 35
     caught: 0
   - name: Sunfish
     value: 350
+    fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 6
     caught: 0
   forestFishList:
   - name: Pike
     value: 50
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 175
     caught: 0
   - name: Catfish
     value: 60
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 160
     caught: 0
   - name: Eel
     value: 65
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 150
     caught: 0
   - name: Salmon
     value: 80
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 75
     caught: 0
   - name: CrayFish
     value: 120
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 60
     caught: 0
   - name: Frog
     value: 500
+    fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 5
     caught: 0
   unlockedAreas: []
   locatedLocation: Lake
+  createdFish: {fileID: 0}
 --- !u!114 &3757609627641815389
 MonoBehaviour:
   m_ObjectHideFlags: 0

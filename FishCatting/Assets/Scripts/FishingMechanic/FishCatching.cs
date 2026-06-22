@@ -8,7 +8,10 @@ public class FishCatching : MonoBehaviour
     private CatchFishes catchFish;
     private FishingMinigame minigame;
     private GameObject bobber;
-    private Animator animator;
+    private Animator bobAnimator;
+    private Animator catAnimator;
+    [SerializeField]
+    private BobAnimationEvents bobAnimationEvents;
 
     [SerializeField]
     private TextMeshProUGUI debugText;
@@ -25,6 +28,8 @@ public class FishCatching : MonoBehaviour
     private int minFakeWait = 1;
     [SerializeField]
     private int maxFakeWait = 10;
+    [SerializeField]
+    private int maxFakeBites = 6;
 
     private int fakeBitesAmount;
 
@@ -33,8 +38,9 @@ public class FishCatching : MonoBehaviour
     void Start()
     {
         casting = GetComponent<CastingLine>();
+        catAnimator = casting.GetAnimator();
         bobber = casting.GetBobber();
-        animator = bobber.GetComponentInChildren<Animator>();
+        bobAnimator = bobber.GetComponentInChildren<Animator>();
         catchFish = GetComponent<CatchFishes>();
         minigame = GetComponent<FishingMinigame>();
     }
@@ -60,41 +66,58 @@ public class FishCatching : MonoBehaviour
 
     private IEnumerator FakeBob()
     {
-        animator.SetTrigger("FakeBite");
+        bobAnimator.SetTrigger("FakeBite");
         fakebitesHappened++;
         yield return new WaitForSeconds(Random.Range(minFakeWait, maxFakeWait + 1));
     }
 
     public void ReelIn()
     {
+        bobAnimationEvents.StopTheCorountines();
         fakebitesHappened = 0;
         if (fishBitten)
         {
+            casting.SetCastingbool(true);
             Debug.Log("Yay Yippee you did it yaayayayayay");
             //start minigame
+            catAnimator.SetTrigger("CaughtFish");
             minigame.StartMiniGame();
             //catchFish.BeginFishing();
             fishBitten = false;
         }
         else
         {
-            StartCoroutine(casting.ThrowReel(casting.GetUnCassed().position, casting.GetBobber().transform.position, casting.GetReelInSpeed(), casting.GetReelInAngle()));
-            Debug.Log("no fish lol");
+            StartCoroutine(ThrowCastBack());
         }
+    }
+
+    private IEnumerator ThrowCastBack()
+    {
+        catAnimator.SetTrigger("Casting");
+        Vector3 uncasPos = casting.GetUnCassed().position;
+        yield return new WaitForSeconds(0.9f);
+        StartCoroutine(casting.ThrowReel(uncasPos, casting.GetBobber().transform.position, casting.GetReelInSpeed(), casting.GetReelInAngle()));
+        Debug.Log("no fish lol");
     }
 
     private void FishBite()
     {
-        animator.SetTrigger("RealBite");
+        bobAnimator.SetTrigger("RealBite");
     }
 
     public void SetFishTime()
     {
-        fakeBitesAmount = Random.Range(0, 6);
+        fakebitesHappened = 0;
+        fakeBitesAmount = Random.Range(0, maxFakeBites);
     }
 
     public void SetBittenBool(bool pBool)
     {
         fishBitten = pBool;
+    }
+
+    public bool GetFishBitten()
+    {
+        return fishBitten;
     }
 }
