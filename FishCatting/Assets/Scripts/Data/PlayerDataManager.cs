@@ -3,6 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(GameManager))]
 public class PlayerDataManager : MonoBehaviour
 {
+    public static PlayerDataManager instance;
+    void Awake()
+    {
+        instance = this;
+    }
     public void SaveGame()
     {
         //we put the data into a json called playerData.json for loading next time the user plays.

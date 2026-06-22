@@ -9,30 +9,25 @@ public class CatchFishes : MonoBehaviour
     public void BeginFishing()
     {
         Fish currentfish = CatchFish();
-        if (currentfish.caught == true)
+        FishCatched(currentfish);
+    }
+
+    public void FishCatched(Fish currentfish)
+    {
+        if (currentfish.caught == true && GameManager.instance.fishTextTest != null)
         {
             GameManager.instance.fishTextTest.text = $"caught an {currentfish.name} with value of {currentfish.value} and rarity of {currentfish.rarity} (duplicate)";
         }
         else
         {
-            GameManager.instance.fishTextTest.text = $"caught an new fish called {currentfish.name} with value of {currentfish.value} and rarity of {currentfish.rarity}";
+            if (GameManager.instance.fishTextTest != null)
+            {
+                GameManager.instance.fishTextTest.text = $"caught an new fish called {currentfish.name} with value of {currentfish.value} and rarity of {currentfish.rarity}";
+            }
             currentfish.caught = true;
         }
         GameManager.instance.money += currentfish.value;
-    }
-
-    public void FishCatched(Fish currentFish)
-    {
-        if (currentFish.caught == true)
-        {
-            GameManager.instance.fishTextTest.text = $"caught an {currentFish.name} with value of {currentFish.value} and rarity of {currentFish.rarity} (duplicate)";
-        }
-        else
-        {
-            GameManager.instance.fishTextTest.text = $"caught an new fish called {currentFish.name} with value of {currentFish.value} and rarity of {currentFish.rarity}";
-            currentFish.caught = true;
-        }
-        GameManager.instance.money += currentFish.value;
+        PlayerDataManager.instance.SaveGame();
     }
 
     public Fish CatchFish()

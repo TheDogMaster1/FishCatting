@@ -16,14 +16,12 @@ public class GameManager : MonoBehaviour
     public string locatedLocation;
     [HideInInspector]
     public GameObject createdFish;
-    PlayerDataManager playerDataManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         instance = this;
-        playerDataManager = GetComponent<PlayerDataManager>();
-        playerDataManager.LoadGame();
+        PlayerDataManager.instance.LoadGame();
     }
     public void ChangeLocation(int locationID)
     {
@@ -37,11 +35,18 @@ public class GameManager : MonoBehaviour
             {
                 locatedLocation = unlockedAreas[locationID].name;
                 unlockedAreas[locationID].unlocked = true;
-                fishTextTest.text = $"bought new area: {unlockedAreas[locationID].name}!";
+                if (fishTextTest != null)
+                {
+                    fishTextTest.text = $"bought new area: {unlockedAreas[locationID].name}!";
+                }
+                PlayerDataManager.instance.SaveGame();
             }
             else
             {
-                fishTextTest.text = "area too expensive!";
+                if (fishTextTest != null)
+                {
+                    fishTextTest.text = "area too expensive!";
+                }
             }
         }
         else
