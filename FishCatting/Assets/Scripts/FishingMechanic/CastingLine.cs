@@ -9,6 +9,8 @@ public class CastingLine : MonoBehaviour
     private GameObject bobberModel;
     [SerializeField]
     private Transform uncastPosition;
+    [SerializeField]
+    private Material water;
 
     [Header("Casting Settings")]
     [SerializeField, Range(1, 89)]
@@ -105,10 +107,29 @@ public class CastingLine : MonoBehaviour
             yield return null;
         }
         bobber.transform.rotation = Quaternion.Euler(Vector3.zero);
+        StartCoroutine(LandingWaves());
         flying = false;
     }
 
-
+    private IEnumerator LandingWaves()
+    {
+        if (bobber.transform.position.y > 0)
+        {
+            water.SetFloat("_Power", 0);
+        }
+        else
+        {
+            water.SetVector("_BeginPos", new Vector4(bobber.transform.position.x, bobber.transform.position.z, 0, 0));
+            water.SetFloat("_Power", 1);
+        }
+        while (water.GetFloat("_Power") > 0)
+        {
+            water.SetFloat("_Power", water.GetFloat("_Power") - 0.1f);
+            yield return new WaitForSeconds(0.1f);
+        }
+        water.SetFloat("_Power", 0);
+        yield return null;
+    }
     public bool GetCastingbool()
     {
         return bobberCasted;
@@ -131,5 +152,10 @@ public class CastingLine : MonoBehaviour
     public float GetReelInSpeed()
     {
         return reelInSpeed;
+    }
+
+    private void OnApplicationQuit()
+    {
+        water.SetFloat("_Power", 0);
     }
 }

@@ -278,7 +278,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5537dd4905806c40a2e4dbca427dc78, type: 2}
+  - {fileID: 2100000, guid: b84312d996ace624ba343028c3598135, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -755,6 +755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishingManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6762295381230592293, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: 2100000, guid: b84312d996ace624ba343028c3598135, type: 2}
     - target: {fileID: 6762295381230592293, guid: 2a98bdf0c0844a24ea428843e678ba0e, type: 3}
       propertyPath: bobber
       value: 

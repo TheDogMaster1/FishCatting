@@ -94,7 +94,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Distance: 4.78
+    - _Distance: 5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -106,7 +106,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Power: 0.5
+    - _Power: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -125,7 +125,7 @@ Material:
     - _test: 0.75
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BeginPos: {r: 0, g: 0, b: 0, a: 0}
+    - _BeginPos: {r: -3.313259, g: 20.25664, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Regular: {r: 0, g: 0.0787333, b: 0.9811321, a: 1}
