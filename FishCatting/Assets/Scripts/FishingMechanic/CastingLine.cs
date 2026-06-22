@@ -9,6 +9,10 @@ public class CastingLine : MonoBehaviour
     private GameObject bobberModel;
     [SerializeField]
     private Transform uncastPosition;
+    [SerializeField]
+    private Material water;
+    [SerializeField]
+    private Animator animator;
 
     [Header("Casting Settings")]
     [SerializeField, Range(1, 89)]
@@ -19,6 +23,7 @@ public class CastingLine : MonoBehaviour
     private float reelInAngle = 30f;
     [SerializeField]
     private float reelInSpeed = 10f;
+
     private GetClickPosition clickPosition;
     private FishCatching fishCatching;
 
@@ -68,7 +73,10 @@ public class CastingLine : MonoBehaviour
             yield break;
         }
         fishCatching.SetFishTime();
-        yield return ThrowReel(clickPosition.GetTapPos("AllowCast"), bobber.transform.position, castSpeed, castAngle);
+        animator.SetTrigger("Casting");
+        Vector3 tapPos = clickPosition.GetTapPos("AllowCast");
+        if (!fishCatching.GetFishBitten()) yield return new WaitForSeconds(0.9f);
+        yield return ThrowReel(tapPos, bobber.transform.position, castSpeed, castAngle);
         StartCoroutine(fishCatching.CastingLine());
     }
 
@@ -105,13 +113,32 @@ public class CastingLine : MonoBehaviour
             yield return null;
         }
         bobber.transform.rotation = Quaternion.Euler(Vector3.zero);
+        StartCoroutine(LandingWaves());
         flying = false;
     }
 
-
-    public bool GetCastingbool()
+    private IEnumerator LandingWaves()
     {
-        return bobberCasted;
+        if (bobber.transform.position.y > 0)
+        {
+            water.SetFloat("_Power", 0);
+        }
+        else
+        {
+            water.SetVector("_BeginPos", new Vector4(bobber.transform.position.x, bobber.transform.position.z, 0, 0));
+            water.SetFloat("_Power", 1);
+        }
+        while (water.GetFloat("_Power") > 0)
+        {
+            water.SetFloat("_Power", water.GetFloat("_Power") - 0.1f);
+            yield return new WaitForSeconds(0.1f);
+        }
+        water.SetFloat("_Power", 0);
+        yield return null;
+    }
+    public void SetCastingbool(bool pBool)
+    {
+        bobberCasted = pBool;
     }
 
     public GameObject GetBobber()
@@ -131,5 +158,14 @@ public class CastingLine : MonoBehaviour
     public float GetReelInSpeed()
     {
         return reelInSpeed;
+    }
+
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
+    private void OnApplicationQuit()
+    {
+        water.SetFloat("_Power", 0);
     }
 }
