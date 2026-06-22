@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
             if (unlockedAreas[locationID].unlocked == true)
             {
                 locatedLocation = unlockedAreas[locationID].name;
+                if (fishTextTest != null)
+                {
+                    fishTextTest.text = "already own area!";
+                }
             }
             else if (Buy(unlockedAreas[locationID].cost))
             {
@@ -52,6 +56,17 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogWarning("area does not exist, please check if the id used in changing area is also the same as the array index of unlocked areas list in the inspector!");
+        }
+    }
+    public void ChangeStringArea(string AreaName)
+    {
+        foreach (var area in unlockedAreas)
+        {
+            if (area.name == AreaName)
+            {
+                locatedLocation = area.name;
+                return;
+            }
         }
     }
     public bool Buy(int moneyCost)

@@ -17,7 +17,8 @@ public class PlayerDataManager : MonoBehaviour
             lakeFishList = GameManager.instance.lakeFishList,
             seaFishList = GameManager.instance.seaFishList,
             forestFishList = GameManager.instance.forestFishList,
-            unlockedAreas = GameManager.instance.unlockedAreas
+            unlockedAreas = GameManager.instance.unlockedAreas,
+            locatedLocation = GameManager.instance.locatedLocation
         };
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
@@ -48,6 +49,14 @@ public class PlayerDataManager : MonoBehaviour
             if (loadedData.unlockedAreas != null && loadedData.unlockedAreas.Count != 0)
             {
                 GameManager.instance.unlockedAreas = loadedData.unlockedAreas;
+            }
+            if(loadedData.locatedLocation == null)
+            {
+                GameManager.instance.locatedLocation = "Lake";
+            }
+            else
+            {
+                GameManager.instance.locatedLocation = loadedData.locatedLocation;
             }
         }
         else
@@ -83,7 +92,8 @@ public class PlayerDataManager : MonoBehaviour
             lakeFishList = null,
             seaFishList = null,
             forestFishList = null,
-            unlockedAreas = null
+            unlockedAreas = null,
+            locatedLocation = "Lake"
         };
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
