@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerDataManager))]
 [RequireComponent(typeof(CatchFishes))]
@@ -18,15 +19,14 @@ public class GameManager : MonoBehaviour
     public GameObject createdFish;
     [HideInInspector]
     public bool seenCutscene;
+    private PlayerDataManager playerDataManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         instance = this;
-    }
-    void Start()
-    {
-        seenCutscene = PlayerDataManager.instance.LoadGame();
+        playerDataManager = GetComponent<PlayerDataManager>();
+        seenCutscene = playerDataManager.LoadGame();
     }
     public void ChangeLocation(int locationID)
     {
@@ -35,10 +35,8 @@ public class GameManager : MonoBehaviour
             if (unlockedAreas[locationID].unlocked == true)
             {
                 locatedLocation = unlockedAreas[locationID].name;
-                if (fishTextTest != null)
-                {
-                    fishTextTest.text = "already own area!";
-                }
+                playerDataManager.SaveGame();
+                SceneManager.LoadScene(unlockedAreas[locationID].name);
             }
             else if (Buy(unlockedAreas[locationID].cost))
             {
@@ -48,7 +46,8 @@ public class GameManager : MonoBehaviour
                 {
                     fishTextTest.text = $"bought new area: {unlockedAreas[locationID].name}!";
                 }
-                PlayerDataManager.instance.SaveGame();
+                playerDataManager.SaveGame();
+                SceneManager.LoadScene(unlockedAreas[locationID].name);
             }
             else
             {
@@ -73,6 +72,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
+        Debug.Log("area not found");
     }
     public bool Buy(int moneyCost)
     {

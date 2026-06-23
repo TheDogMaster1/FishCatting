@@ -11,6 +11,7 @@ public class AreaChecker : MonoBehaviour
         if (areaCheck[0])
         {
             GameManager.instance.ChangeStringArea(this.name);
+            PlayerDataManager.instance.SaveGame();
             SceneManager.LoadScene(this.name);
         }
         else if (areaCheck[1])
