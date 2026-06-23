@@ -16,12 +16,14 @@ public class GameManager : MonoBehaviour
     public string locatedLocation;
     [HideInInspector]
     public GameObject createdFish;
+    [HideInInspector]
+    public bool seenCutscene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         instance = this;
-        PlayerDataManager.instance.LoadGame();
+        seenCutscene = PlayerDataManager.instance.LoadGame();
     }
     public void ChangeLocation(int locationID)
     {
