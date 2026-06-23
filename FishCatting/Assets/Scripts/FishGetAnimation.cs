@@ -5,10 +5,11 @@ public class FishGetAnimation : MonoBehaviour
     [SerializeField]
     private float Speed = 1f;
 
+    private FishingMinigame minigame;
     private GameObject child;
     void Start()
     {
-        //GetChild();
+        minigame = FindAnyObjectByType<FishingMinigame>();
     }
 
     // Update is called once per frame
@@ -29,5 +30,6 @@ public class FishGetAnimation : MonoBehaviour
     public void StopAnimation()
     {
         Destroy(child);
+        minigame.SetGetAnimationBool(false);
     }
 }
