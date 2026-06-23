@@ -11,6 +11,10 @@ public class FishingMinigame : MonoBehaviour
     private Slider timerSlider;
     [SerializeField]
     private GameObject miniGame;
+    [SerializeField]
+    private Transform fishGetTransform;
+    private FishGetAnimation fishGetRotate;
+    private Animator fishGetAnimator;
 
     [Header("Player settings")]
     [SerializeField]
@@ -53,6 +57,12 @@ public class FishingMinigame : MonoBehaviour
         catchFish = GetComponent<CatchFishes>();
         casting = GetComponent<CastingLine>();
         catAnimator = casting.GetAnimator();
+        if (fishGetTransform != null)
+        {
+            fishGetRotate = fishGetTransform.GetComponent<FishGetAnimation>();
+            fishGetAnimator = fishGetTransform.GetComponent<Animator>();
+        }
+        else Debug.LogWarning("You forgot the fishGetAnimation Transform");
         //StartMiniGame();
     }
 
@@ -160,6 +170,12 @@ public class FishingMinigame : MonoBehaviour
         if (ifWon)
         {
             //Debug.Log("Win :D");
+            if (!fish.caught && fishGetTransform != null && fish.fishModel != null)
+            {
+                Instantiate(fish.fishModel, fishGetTransform.position, Quaternion.identity, fishGetTransform);
+                fishGetRotate.GetChild();
+                fishGetAnimator.SetTrigger("Start");
+            }
             catAnimator.SetTrigger("Won");
             catchFish.FishCatched(fish);
         }
