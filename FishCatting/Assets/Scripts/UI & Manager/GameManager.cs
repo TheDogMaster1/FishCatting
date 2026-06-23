@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public TextMeshProUGUI fishTextTest;
+    public TextMeshProUGUI coinText;
     public int money;
     public List<Fish> lakeFishList = new();
     public List<Fish> seaFishList = new();
@@ -27,6 +28,13 @@ public class GameManager : MonoBehaviour
         instance = this;
         playerDataManager = GetComponent<PlayerDataManager>();
         seenCutscene = playerDataManager.LoadGame();
+    }
+    void Update()
+    {
+        if(coinText != null)
+        {
+            coinText.text = $"money: {money}";
+        }
     }
     public void ChangeLocation(int locationID)
     {
