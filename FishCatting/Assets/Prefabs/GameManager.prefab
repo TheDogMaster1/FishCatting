@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 869568268551702988}
   - component: {fileID: 6711162408066979528}
   - component: {fileID: 2613096728610508620}
+  - component: {fileID: 1609607840267538551}
+  - component: {fileID: 2822743610628606451}
+  - component: {fileID: 2213544916866395095}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -195,3 +198,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768ef59af99096842972ee904713d7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatchFishes
+--- !u!114 &1609607840267538551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114614595115533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3190ec3e882c2f4789b754a5797535b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PosTest
+  bobber: {fileID: 0}
+  bobberModel: {fileID: 0}
+  uncastPosition: {fileID: 0}
+  water: {fileID: 2100000, guid: b84312d996ace624ba343028c3598135, type: 2}
+  animator: {fileID: 0}
+  castAngle: 45
+  castSpeed: 1
+  reelInAngle: 60
+  reelInSpeed: 2
+--- !u!114 &2822743610628606451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114614595115533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df48191cd8dd7ca42861f750247019ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FishCatching
+  bobAnimationEvents: {fileID: 0}
+  debugText: {fileID: 0}
+  minWait: 1
+  maxWait: 1
+  minFakeWait: 3
+  maxFakeWait: 6
+  maxFakeBites: 0
+--- !u!114 &2213544916866395095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114614595115533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70762004b33eb784caec877765e491fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FishingMinigame
+  playerSlider: {fileID: 0}
+  fishslider: {fileID: 0}
+  timerSlider: {fileID: 0}
+  miniGame: {fileID: 0}
+  upSpeedChange: 1.5
+  downSpeedChange: 1
+  maxUpSpeed: 1
+  maxDownSpeed: 1
+  fishWinArea: {fileID: 0}
+  miniGameSettings:
+  - rarity: 0
+    fishSpeed: 1
+    minTimeChange: 10
+    maxTimeChange: 15
+    fishWinSize: 40
+    upTimerSpeed: 1
+    downTimerSpeed: 0.9
+    beginValue: 0.1
+  - rarity: 1
+    fishSpeed: 2
+    minTimeChange: 5
+    maxTimeChange: 10
+    fishWinSize: 30
+    upTimerSpeed: 1
+    downTimerSpeed: 0.9
+    beginValue: 0.1
+  - rarity: 2
+    fishSpeed: 2
+    minTimeChange: 2
+    maxTimeChange: 4
+    fishWinSize: 20
+    upTimerSpeed: 1
+    downTimerSpeed: 0.9
+    beginValue: 0.1
+  inMiniGame: 0
