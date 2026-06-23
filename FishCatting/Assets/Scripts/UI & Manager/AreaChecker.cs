@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AreaChecker : MonoBehaviour
 {
@@ -11,8 +11,9 @@ public class AreaChecker : MonoBehaviour
         if (areaCheck[0])
         {
             GameManager.instance.ChangeStringArea(this.name);
+            SceneManager.LoadScene(this.name);
         }
-        else if(areaCheck[1])
+        else if (areaCheck[1])
         {
             PopUp.SetActive(true);
         }

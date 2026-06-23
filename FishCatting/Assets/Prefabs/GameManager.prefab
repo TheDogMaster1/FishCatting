@@ -234,11 +234,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishCatching
   bobAnimationEvents: {fileID: 0}
   debugText: {fileID: 0}
-  minWait: 1
-  maxWait: 1
+  minWait: 3
+  maxWait: 6
   minFakeWait: 3
   maxFakeWait: 6
-  maxFakeBites: 0
+  maxFakeBites: 6
 --- !u!114 &2213544916866395095
 MonoBehaviour:
   m_ObjectHideFlags: 0

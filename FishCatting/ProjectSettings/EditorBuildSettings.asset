@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainGame/MainMenu.unity
     guid: 3523a92d94ef17c4fb60ae3c2d7b4727
   - enabled: 1
-    path: Assets/Scenes/MainGame/LakeArea.unity
+    path: Assets/Scenes/MainGame/Lake.unity
     guid: 16e4199a998ae4c42a9bd8254018f0f2
   - enabled: 1
     path: Assets/Scenes/MainGame/Collection.unity
@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapCanvas.unity
     guid: cff59840607d3d1468df7208cf42f1a9
+  - enabled: 1
+    path: Assets/Scenes/MainGame/Forest.unity
+    guid: bccc53e02e5db1c48a0fe5fd76448d82
+  - enabled: 1
+    path: Assets/Scenes/MainGame/Sea.unity
+    guid: a8942b45bb356b3409a33e55605e6e41
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
