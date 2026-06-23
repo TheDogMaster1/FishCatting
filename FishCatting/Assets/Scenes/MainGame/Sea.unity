@@ -286,14 +286,14 @@ PrefabInstance:
       propertyPath: playerSlider
       value: 
       objectReference: {fileID: 1542792386}
+    - target: {fileID: 2213544916866395095, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
+      propertyPath: fishGetTransform
+      value: 
+      objectReference: {fileID: 1949791170}
     - target: {fileID: 2822743610628606451, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: debugText
       value: 
       objectReference: {fileID: 786405716}
-    - target: {fileID: 2822743610628606451, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
-      propertyPath: maxFakeBites
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2822743610628606451, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: bobAnimationEvents
       value: 
@@ -745,7 +745,8 @@ Transform:
   m_LocalPosition: {x: 3.9997463, y: 12.133851, z: -5.3437314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1949791170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!114 &493333716
@@ -2847,6 +2848,68 @@ PrefabInstance:
       addedObject: {fileID: 928015090}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a47bf6b34f387c24481c1cc1c2776afa, type: 3}
+--- !u!1001 &1949791169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 493333715}
+    m_Modifications:
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5832443
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9594412
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.22208
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811043031626308574, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+      propertyPath: m_Name
+      value: FishGetAnimation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+--- !u!4 &1949791170 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1192074030507342937, guid: 46f88714be6c2a24999ff3486ba59e40, type: 3}
+  m_PrefabInstance: {fileID: 1949791169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068730184
 GameObject:
   m_ObjectHideFlags: 0

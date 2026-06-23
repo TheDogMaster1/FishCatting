@@ -238,7 +238,7 @@ MonoBehaviour:
   maxWait: 6
   minFakeWait: 3
   maxFakeWait: 6
-  maxFakeBites: 6
+  maxFakeBites: 4
 --- !u!114 &2213544916866395095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +255,7 @@ MonoBehaviour:
   fishslider: {fileID: 0}
   timerSlider: {fileID: 0}
   miniGame: {fileID: 0}
+  fishGetTransform: {fileID: 0}
   upSpeedChange: 1.5
   downSpeedChange: 1
   maxUpSpeed: 1
@@ -285,4 +286,3 @@ MonoBehaviour:
     upTimerSpeed: 0.3
     downTimerSpeed: 0.5
     beginValue: 0.1
-  inMiniGame: 0
