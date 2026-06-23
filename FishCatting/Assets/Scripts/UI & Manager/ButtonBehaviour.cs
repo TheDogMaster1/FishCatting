@@ -17,4 +17,12 @@ public class ButtonBehaviour : MonoBehaviour
     {
         audio.Play();
     }
+    public void CheckCutscene(string sceneToLoad)
+    {
+        if(GameManager.instance.seenCutscene)
+        {
+            LoadScene(sceneToLoad);
+            
+        }
+    }
 }

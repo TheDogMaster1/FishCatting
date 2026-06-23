@@ -24,7 +24,7 @@ public class PlayerDataManager : MonoBehaviour
         string path = Application.persistentDataPath + "/playerData.json";
         File.WriteAllText(path, json);
     }
-    public void LoadGame()
+    public bool LoadGame()
     {
         //we load the data from the json file called playerData.json unless it's not found, in which case we do a debug log.
         //not having the save file only means the user hasn't played before or deleted it! this should NOT stop you from playing.
@@ -58,10 +58,12 @@ public class PlayerDataManager : MonoBehaviour
             {
                 GameManager.instance.locatedLocation = loadedData.locatedLocation;
             }
+            return true;
         }
         else
         {
             Debug.Log("File not found!");
+            return false;
         }
     }
     public void NewGame()
