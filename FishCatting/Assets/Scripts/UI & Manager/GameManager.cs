@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+    }
+    void Start()
+    {
         seenCutscene = PlayerDataManager.instance.LoadGame();
     }
     public void ChangeLocation(int locationID)
