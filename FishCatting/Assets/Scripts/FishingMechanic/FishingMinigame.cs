@@ -11,6 +11,10 @@ public class FishingMinigame : MonoBehaviour
     private Slider timerSlider;
     [SerializeField]
     private GameObject miniGame;
+    [SerializeField]
+    private Transform fishGetTransform;
+    private FishGetAnimation fishGetRotate;
+    private Animator fishGetAnimator;
 
     [Header("Player settings")]
     [SerializeField]
@@ -40,8 +44,8 @@ public class FishingMinigame : MonoBehaviour
     private float fishTimer = 0;
     private float fishSwitchTime = 0;
 
-    [SerializeField]
     private bool inMiniGame = false;
+    private bool inGetAnimation = false;
 
     private CatchFishes catchFish;
     private CastingLine casting;
@@ -53,6 +57,12 @@ public class FishingMinigame : MonoBehaviour
         catchFish = GetComponent<CatchFishes>();
         casting = GetComponent<CastingLine>();
         catAnimator = casting.GetAnimator();
+        if (fishGetTransform != null)
+        {
+            fishGetRotate = fishGetTransform.GetComponent<FishGetAnimation>();
+            fishGetAnimator = fishGetTransform.GetComponent<Animator>();
+        }
+        else Debug.LogWarning("You forgot the fishGetAnimation Transform");
         //StartMiniGame();
     }
 
@@ -133,6 +143,7 @@ public class FishingMinigame : MonoBehaviour
         SetSettings();
         fishWinArea.sizeDelta = new Vector2(0, usedSettings.fishWinSize);
         playerSlider.value = 0;
+        usedSpeed = 0;
         timerToBegin = 0;
         fishTimer = 0;
         fishSwitchTime = 1f;
@@ -159,6 +170,13 @@ public class FishingMinigame : MonoBehaviour
         if (ifWon)
         {
             //Debug.Log("Win :D");
+            if (!fish.caught && fishGetTransform != null && fish.fishModel != null)
+            {
+                Instantiate(fish.fishModel, fishGetTransform.position, Quaternion.identity, fishGetTransform);
+                fishGetRotate.GetChild();
+                fishGetAnimator.SetTrigger("Start");
+                inGetAnimation = true;
+            }
             catAnimator.SetTrigger("Won");
             catchFish.FishCatched(fish);
         }
@@ -175,5 +193,15 @@ public class FishingMinigame : MonoBehaviour
     public bool BoolMiniGame()
     {
         return inMiniGame;
+    }
+
+    public void SetGetAnimationBool(bool pBool)
+    {
+        inGetAnimation = pBool;
+    }
+
+    public bool BoolGetAnimation()
+    {
+        return inGetAnimation;
     }
 }

@@ -45,7 +45,7 @@ public class CastingLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (minigame.BoolMiniGame()) return;
+        if (minigame.BoolMiniGame() || minigame.BoolGetAnimation()) return;
         if (Input.touchCount > 0)
         {
             tap = Input.GetTouch(0);
