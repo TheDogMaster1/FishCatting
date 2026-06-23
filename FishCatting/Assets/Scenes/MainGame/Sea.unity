@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 2213544916866395095, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: fishWinArea
       value: 
-      objectReference: {fileID: 1193580403}
+      objectReference: {fileID: 848475153}
     - target: {fileID: 2213544916866395095, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: timerSlider
       value: 
@@ -945,6 +945,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!224 &848475153 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+  m_PrefabInstance: {fileID: 1542792381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &928015089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,11 +1522,6 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9084350484850731705, guid: 7a0649bc243ddd147a570e0bdf3b07f9, type: 3}
   m_PrefabInstance: {fileID: 1184036938}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1193580403 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8403891942189847712, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
-  m_PrefabInstance: {fileID: 1542792381}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1387569436
 GameObject:
