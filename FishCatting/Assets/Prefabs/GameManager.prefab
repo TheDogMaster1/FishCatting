@@ -279,8 +279,8 @@ MonoBehaviour:
     beginValue: 0.1
   - rarity: 2
     fishSpeed: 0.8
-    minTimeChange: 3
-    maxTimeChange: 6
+    minTimeChange: 2
+    maxTimeChange: 4
     fishWinSize: 20
     upTimerSpeed: 0.3
     downTimerSpeed: 0.5

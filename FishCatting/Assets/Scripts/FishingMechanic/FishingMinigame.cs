@@ -133,6 +133,7 @@ public class FishingMinigame : MonoBehaviour
         SetSettings();
         fishWinArea.sizeDelta = new Vector2(0, usedSettings.fishWinSize);
         playerSlider.value = 0;
+        usedSpeed = 0;
         timerToBegin = 0;
         fishTimer = 0;
         fishSwitchTime = 1f;
