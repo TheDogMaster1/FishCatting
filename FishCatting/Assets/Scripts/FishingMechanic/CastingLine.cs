@@ -167,5 +167,6 @@ public class CastingLine : MonoBehaviour
     private void OnApplicationQuit()
     {
         water.SetFloat("_Power", 0);
+        water.SetVector("_BeginPos", Vector4.zero);
     }
 }

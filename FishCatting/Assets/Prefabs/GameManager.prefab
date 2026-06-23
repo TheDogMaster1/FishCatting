@@ -261,27 +261,27 @@ MonoBehaviour:
   fishWinArea: {fileID: 0}
   miniGameSettings:
   - rarity: 0
-    fishSpeed: 1
+    fishSpeed: 0.3
     minTimeChange: 10
-    maxTimeChange: 15
-    fishWinSize: 40
-    upTimerSpeed: 1
-    downTimerSpeed: 0.9
+    maxTimeChange: 20
+    fishWinSize: 50
+    upTimerSpeed: 0.5
+    downTimerSpeed: 0.4
     beginValue: 0.1
   - rarity: 1
-    fishSpeed: 2
-    minTimeChange: 5
-    maxTimeChange: 10
+    fishSpeed: 0.5
+    minTimeChange: 7
+    maxTimeChange: 12
     fishWinSize: 30
-    upTimerSpeed: 1
-    downTimerSpeed: 0.9
+    upTimerSpeed: 0.4
+    downTimerSpeed: 0.4
     beginValue: 0.1
   - rarity: 2
-    fishSpeed: 2
-    minTimeChange: 2
-    maxTimeChange: 4
+    fishSpeed: 0.8
+    minTimeChange: 3
+    maxTimeChange: 6
     fishWinSize: 20
-    upTimerSpeed: 1
-    downTimerSpeed: 0.9
+    upTimerSpeed: 0.3
+    downTimerSpeed: 0.5
     beginValue: 0.1
   inMiniGame: 0

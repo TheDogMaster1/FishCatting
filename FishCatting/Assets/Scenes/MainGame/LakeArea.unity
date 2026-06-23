@@ -198,6 +198,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172890064 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7245675340086699163, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+  m_PrefabInstance: {fileID: 1542792381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!95 &232130390 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8929477498052451070, guid: a47bf6b34f387c24481c1cc1c2776afa, type: 3}
@@ -420,18 +431,18 @@ PrefabInstance:
     - target: {fileID: 869568268551702988, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: fishTextTest
       value: 
-      objectReference: {fileID: 786405716}
+      objectReference: {fileID: 172890064}
     - target: {fileID: 1341146977952104212, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.57126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1341146977952104212, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -349.45703
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1341146977952104212, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 104.83932
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1341146977952104212, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: m_LocalRotation.w
