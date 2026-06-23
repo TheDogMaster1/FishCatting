@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   fishTextTest: {fileID: 0}
+  coinText: {fileID: 0}
   money: 0
   lakeFishList:
   - name: Trout
@@ -264,25 +265,25 @@ MonoBehaviour:
   miniGameSettings:
   - rarity: 0
     fishSpeed: 0.3
-    minTimeChange: 10
-    maxTimeChange: 20
+    minTimeChange: 5
+    maxTimeChange: 7
     fishWinSize: 50
-    upTimerSpeed: 0.5
-    downTimerSpeed: 0.4
+    upTimerSpeed: 0.2
+    downTimerSpeed: 0.16
     beginValue: 0.1
   - rarity: 1
     fishSpeed: 0.5
-    minTimeChange: 7
-    maxTimeChange: 12
+    minTimeChange: 3
+    maxTimeChange: 6
     fishWinSize: 30
-    upTimerSpeed: 0.4
-    downTimerSpeed: 0.4
+    upTimerSpeed: 0.16
+    downTimerSpeed: 0.16
     beginValue: 0.1
   - rarity: 2
     fishSpeed: 0.8
-    minTimeChange: 2
-    maxTimeChange: 4
+    minTimeChange: 1
+    maxTimeChange: 3
     fishWinSize: 20
-    upTimerSpeed: 0.3
-    downTimerSpeed: 0.5
+    upTimerSpeed: 0.12
+    downTimerSpeed: 0.2
     beginValue: 0.1
