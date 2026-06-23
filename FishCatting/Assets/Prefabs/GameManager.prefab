@@ -131,37 +131,37 @@ MonoBehaviour:
     fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 175
-    caught: 1
+    caught: 0
   - name: CatFish
     value: 60
     fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 160
-    caught: 1
+    caught: 0
   - name: Eel
     value: 65
     fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 150
-    caught: 1
+    caught: 0
   - name: Salmon
     value: 80
     fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 75
-    caught: 1
+    caught: 0
   - name: CrayFish
     value: 120
     fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 60
-    caught: 1
+    caught: 0
   - name: Frog
     value: 500
     fishModel: {fileID: 0}
     rarity: 2
     rarityWeight: 5
-    caught: 1
+    caught: 0
   unlockedAreas:
   - name: Lake
     cost: 0
