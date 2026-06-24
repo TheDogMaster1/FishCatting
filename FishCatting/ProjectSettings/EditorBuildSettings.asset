@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainGame/Collection.unity
     guid: f8309b29b0518b3499f5760b0335f2f3
   - enabled: 1
-    path: Assets/Scenes/MapCanvas.unity
+    path: Assets/Scenes/MainGame/MapCanvas.unity
     guid: cff59840607d3d1468df7208cf42f1a9
   - enabled: 1
     path: Assets/Scenes/MainGame/Forest.unity
