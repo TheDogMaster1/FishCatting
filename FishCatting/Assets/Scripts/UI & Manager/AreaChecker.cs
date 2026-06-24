@@ -35,6 +35,10 @@ public class AreaChecker : MonoBehaviour
                 {
                     boolList.Add(true);
                     boolList.Add(true);
+                    if(GameManager.instance.locatedLocation == area.name)
+                    {
+                        boolList.Add(true);
+                    }
                 }
                 else
                 {
