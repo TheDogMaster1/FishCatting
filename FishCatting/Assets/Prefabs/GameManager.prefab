@@ -265,25 +265,25 @@ MonoBehaviour:
   miniGameSettings:
   - rarity: 0
     fishSpeed: 0.3
-    minTimeChange: 5
-    maxTimeChange: 7
-    fishWinSize: 50
+    minTimeChange: 1
+    maxTimeChange: 5
+    fishWinSize: 40
     upTimerSpeed: 0.2
     downTimerSpeed: 0.16
     beginValue: 0.1
   - rarity: 1
     fishSpeed: 0.5
-    minTimeChange: 3
-    maxTimeChange: 6
+    minTimeChange: 1
+    maxTimeChange: 4
     fishWinSize: 30
     upTimerSpeed: 0.16
     downTimerSpeed: 0.16
     beginValue: 0.1
   - rarity: 2
     fishSpeed: 0.8
-    minTimeChange: 1
-    maxTimeChange: 3
-    fishWinSize: 20
+    minTimeChange: 2
+    maxTimeChange: 4
+    fishWinSize: 25
     upTimerSpeed: 0.12
     downTimerSpeed: 0.2
     beginValue: 0.1
