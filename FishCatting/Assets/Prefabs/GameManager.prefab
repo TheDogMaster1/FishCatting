@@ -186,6 +186,9 @@ MonoBehaviour:
     cost: 2500
     unlocked: 0
   locatedLocation: Lake
+  skins:
+  - {fileID: 2100000, guid: b60b228ee755dcc4a9111a26e146a09c, type: 2}
+  currentSkin: {fileID: 2100000, guid: b60b228ee755dcc4a9111a26e146a09c, type: 2}
   createdFish: {fileID: 0}
   seenCutscene: 0
 --- !u!114 &2613096728610508620
