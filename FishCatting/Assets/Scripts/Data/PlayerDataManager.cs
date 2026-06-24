@@ -21,7 +21,16 @@ public class PlayerDataManager : MonoBehaviour
             locatedLocation = GameManager.instance.locatedLocation
         };
         string json = JsonUtility.ToJson(playerData);
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+        string path = Path.combine("idbfs", Application.productName);
+        if(!File.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        path = Path.combine(path, fileName);
+#else
         string path = Application.persistentDataPath + "/playerData.json";
+#endif
         File.WriteAllText(path, json);
     }
     public bool LoadGame()
@@ -50,7 +59,7 @@ public class PlayerDataManager : MonoBehaviour
             {
                 GameManager.instance.unlockedAreas = loadedData.unlockedAreas;
             }
-            if(loadedData.locatedLocation == null)
+            if (loadedData.locatedLocation == null)
             {
                 GameManager.instance.locatedLocation = "Lake";
             }
