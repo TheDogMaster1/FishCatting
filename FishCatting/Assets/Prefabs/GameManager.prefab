@@ -9,9 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1341146977952104212}
-  - component: {fileID: 869568268551702988}
   - component: {fileID: 6711162408066979528}
+  - component: {fileID: 869568268551702988}
   - component: {fileID: 2613096728610508620}
+  - component: {fileID: 1609607840267538551}
+  - component: {fileID: 2822743610628606451}
+  - component: {fileID: 2213544916866395095}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -34,6 +37,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6711162408066979528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114614595115533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4923b5f4923515b4ab82bbafc3cb407d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
 --- !u!114 &869568268551702988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,100 +62,119 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   fishTextTest: {fileID: 0}
+  coinText: {fileID: 0}
   money: 0
   lakeFishList:
   - name: Trout
-    value: 20
-    rarity: 0
-    rarityWeight: 100
-    caught: 0
-  - name: Carp
-    value: 25
+    value: 22
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 0
     rarityWeight: 95
     caught: 0
-  - name: Crappie
-    value: 30
+  - name: Carp
+    value: 27
+    fishModel: {fileID: 0}
     rarity: 0
-    rarityWeight: 80
+    rarityWeight: 85
+    caught: 0
+  - name: Crappie
+    value: 35
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 85
     caught: 0
   - name: FishCat
-    value: 50
+    value: 60
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 50
+    caught: 0
+  - name: GoldFish
+    value: 70
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 45
     caught: 0
-  - name: GoldFish
-    value: 60
-    rarity: 1
-    rarityWeight: 40
-    caught: 0
   - name: Crab
     value: 250
+    fishModel: {fileID: 0}
     rarity: 2
-    rarityWeight: 10
+    rarityWeight: 15
     caught: 0
   seaFishList:
   - name: Mackerel
-    value: 30
+    value: 35
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 130
     caught: 0
   - name: Ray
     value: 40
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 120
     caught: 0
   - name: Bass
     value: 45
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 110
     caught: 0
   - name: Tuna
     value: 90
+    fishModel: {fileID: 0}
     rarity: 1
-    rarityWeight: 40
+    rarityWeight: 45
     caught: 0
   - name: Squid
     value: 115
+    fishModel: {fileID: 0}
     rarity: 1
-    rarityWeight: 35
+    rarityWeight: 40
     caught: 0
-  - name: Sunfish
+  - name: SunFish
     value: 350
+    fishModel: {fileID: 0}
     rarity: 2
-    rarityWeight: 6
+    rarityWeight: 10
     caught: 0
   forestFishList:
   - name: Pike
-    value: 50
+    value: 55
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 175
-    caught: 1
-  - name: Catfish
-    value: 60
+    caught: 0
+  - name: CatFish
+    value: 65
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 160
-    caught: 1
+    caught: 0
   - name: Eel
-    value: 65
+    value: 75
+    fishModel: {fileID: 0}
     rarity: 0
     rarityWeight: 150
-    caught: 1
+    caught: 0
   - name: Salmon
-    value: 80
+    value: 90
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 80
+    caught: 0
+  - name: CrayFish
+    value: 125
+    fishModel: {fileID: 0}
     rarity: 1
     rarityWeight: 75
-    caught: 1
-  - name: CrayFish
-    value: 120
-    rarity: 1
-    rarityWeight: 60
-    caught: 1
+    caught: 0
   - name: Frog
-    value: 500
+    value: 555
+    fishModel: {fileID: 0}
     rarity: 2
-    rarityWeight: 5
-    caught: 1
+    rarityWeight: 8
+    caught: 0
   unlockedAreas:
   - name: Lake
     cost: 0
@@ -152,18 +186,8 @@ MonoBehaviour:
     cost: 2500
     unlocked: 0
   locatedLocation: Lake
---- !u!114 &6711162408066979528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5114614595115533744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4923b5f4923515b4ab82bbafc3cb407d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
+  createdFish: {fileID: 0}
+  seenCutscene: 0
 --- !u!114 &2613096728610508620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +200,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768ef59af99096842972ee904713d7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatchFishes
+--- !u!114 &1609607840267538551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114614595115533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3190ec3e882c2f4789b754a5797535b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PosTest
+  bobber: {fileID: 0}
+  bobberModel: {fileID: 0}
+  uncastPosition: {fileID: 0}
+  water: {fileID: 2100000, guid: b84312d996ace624ba343028c3598135, type: 2}
+  animator: {fileID: 0}
+  castAngle: 45
+  castSpeed: 1
+  reelInAngle: 60
+  reelInSpeed: 2
+--- !u!114 &2822743610628606451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114614595115533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df48191cd8dd7ca42861f750247019ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FishCatching
+  bobAnimationEvents: {fileID: 0}
+  debugText: {fileID: 0}
+  minWait: 3
+  maxWait: 6
+  minFakeWait: 3
+  maxFakeWait: 6
+  maxFakeBites: 4
+--- !u!114 &2213544916866395095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114614595115533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70762004b33eb784caec877765e491fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FishingMinigame
+  playerSlider: {fileID: 0}
+  fishslider: {fileID: 0}
+  timerSlider: {fileID: 0}
+  miniGame: {fileID: 0}
+  fishGetTransform: {fileID: 0}
+  upSpeedChange: 1.5
+  downSpeedChange: 1
+  maxUpSpeed: 1
+  maxDownSpeed: 1
+  fishWinArea: {fileID: 0}
+  miniGameSettings:
+  - rarity: 0
+    fishSpeed: 0.3
+    minTimeChange: 5
+    maxTimeChange: 7
+    fishWinSize: 50
+    upTimerSpeed: 0.2
+    downTimerSpeed: 0.16
+    beginValue: 0.1
+  - rarity: 1
+    fishSpeed: 0.5
+    minTimeChange: 3
+    maxTimeChange: 6
+    fishWinSize: 30
+    upTimerSpeed: 0.16
+    downTimerSpeed: 0.16
+    beginValue: 0.1
+  - rarity: 2
+    fishSpeed: 0.8
+    minTimeChange: 1
+    maxTimeChange: 3
+    fishWinSize: 20
+    upTimerSpeed: 0.12
+    downTimerSpeed: 0.2
+    beginValue: 0.1
