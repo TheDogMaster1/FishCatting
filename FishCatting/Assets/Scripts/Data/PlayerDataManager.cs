@@ -40,7 +40,12 @@ public class PlayerDataManager : MonoBehaviour
     {
         //we load the data from the json file called playerData.json unless it's not found, in which case we do a debug log.
         //not having the save file only means the user hasn't played before or deleted it! this should NOT stop you from playing.
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+        string path = System.IO.Path.Combine("idbfs", Application.productName);
+        path = System.IO.Path.Combine(path, "saveDataFishing");
+#else
         string path = Application.persistentDataPath + "/playerData.json";
+#endif
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
