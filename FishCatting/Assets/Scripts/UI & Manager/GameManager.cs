@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     public List<Fish> forestFishList = new();
     public List<Area> unlockedAreas = new();
     public string locatedLocation;
+    public List<GameObject> skins;
+    public GameObject currentSkin;
+    private Transform morgana;
     [HideInInspector]
     public GameObject createdFish;
     [HideInInspector]
@@ -29,9 +32,18 @@ public class GameManager : MonoBehaviour
         playerDataManager = GetComponent<PlayerDataManager>();
         seenCutscene = playerDataManager.LoadGame();
     }
+    private void Start()
+    {
+        if (currentSkin != null && FindAnyObjectByType<Morgana>() != null)
+        {
+            morgana = FindAnyObjectByType<Morgana>().transform;
+            var morganaSkin = Instantiate(currentSkin, Vector3.zero, Quaternion.identity, morgana);
+            morganaSkin.transform.localPosition = Vector3.zero;
+        }
+    }
     void Update()
     {
-        if(coinText != null)
+        if (coinText != null)
         {
             coinText.text = $"money: {money}";
         }

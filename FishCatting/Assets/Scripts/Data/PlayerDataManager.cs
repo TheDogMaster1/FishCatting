@@ -19,7 +19,9 @@ public class PlayerDataManager : MonoBehaviour
             seaFishList = GameManager.instance.seaFishList,
             forestFishList = GameManager.instance.forestFishList,
             unlockedAreas = GameManager.instance.unlockedAreas,
-            locatedLocation = GameManager.instance.locatedLocation
+            locatedLocation = GameManager.instance.locatedLocation,
+            skins = GameManager.instance.skins,
+            currentSkin = GameManager.instance.currentSkin
         };
         string json = JsonUtility.ToJson(playerData);
 #if (UNITY_WEBGL && !UNITY_EDITOR)
@@ -68,6 +70,14 @@ public class PlayerDataManager : MonoBehaviour
             {
                 GameManager.instance.locatedLocation = loadedData.locatedLocation;
             }
+            if (loadedData.skins != null)
+            {
+                GameManager.instance.skins = loadedData.skins;
+            }
+            if (loadedData.currentSkin != null)
+            {
+                GameManager.instance.currentSkin = loadedData.currentSkin;
+            }
             return true;
         }
         else
@@ -105,7 +115,9 @@ public class PlayerDataManager : MonoBehaviour
             seaFishList = null,
             forestFishList = null,
             unlockedAreas = null,
-            locatedLocation = "Lake"
+            locatedLocation = "Lake",
+            skins = null,
+            currentSkin = null
         };
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
