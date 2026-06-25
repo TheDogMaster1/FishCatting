@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using System.Collections;
 [RequireComponent(typeof(GameManager))]
 public class PlayerDataManager : MonoBehaviour
 {
@@ -22,12 +23,12 @@ public class PlayerDataManager : MonoBehaviour
         };
         string json = JsonUtility.ToJson(playerData);
 #if (UNITY_WEBGL && !UNITY_EDITOR)
-        string path = Path.combine("idbfs", Application.productName);
+        string path = System.IO.Path.Combine("idbfs", Application.productName);
         if(!File.Exists(path))
         {
             Directory.CreateDirectory(path);
         }
-        path = Path.combine(path, fileName);
+        path = System.IO.Path.Combine(path, "saveDataFishing");
 #else
         string path = Application.persistentDataPath + "/playerData.json";
 #endif
