@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinButton
-  skin: {fileID: 2100000, guid: 9ba4eda7cc320f642aef02a7a768527c, type: 2}
+  skin: {fileID: 557420987998136019, guid: 60c1155813bb96e40858535890003d05, type: 3}
   Cost: 10
   boughtTexture: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinButton
-  skin: {fileID: 2100000, guid: b60b228ee755dcc4a9111a26e146a09c, type: 2}
+  skin: {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
   Cost: 10
   boughtTexture: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
@@ -2235,7 +2235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinButton
-  skin: {fileID: 2100000, guid: 37a22b3da5678c64793ec7fac7315484, type: 2}
+  skin: {fileID: 1116518761953513406, guid: b94545279482f544f98b7706b8f0947f, type: 3}
   Cost: 10
   boughtTexture: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
@@ -2608,7 +2608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinButton
-  skin: {fileID: 2100000, guid: a744125281751db43ac18091921ab0c2, type: 2}
+  skin: {fileID: 8065721816458837448, guid: 852740bb3079d5444830a03207e05d17, type: 3}
   Cost: 10
   boughtTexture: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}

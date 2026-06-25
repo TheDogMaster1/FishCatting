@@ -34,10 +34,11 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        if (currentSkin != null)
+        if (currentSkin != null && FindAnyObjectByType<Morgana>() != null)
         {
             morgana = FindAnyObjectByType<Morgana>().transform;
-            Instantiate(currentSkin, Vector3.zero, Quaternion.identity, morgana);
+            var morganaSkin = Instantiate(currentSkin, Vector3.zero, Quaternion.identity, morgana);
+            morganaSkin.transform.localPosition = Vector3.zero;
         }
     }
     void Update()
