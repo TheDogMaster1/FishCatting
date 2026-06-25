@@ -49,6 +49,7 @@ public class FishingMinigame : MonoBehaviour
 
     private CatchFishes catchFish;
     private CastingLine casting;
+    [SerializeField]
     private Animator catAnimator;
     private Fish fish = new("newfish", 0, Fish.Rarity.Common, 100);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -56,7 +57,7 @@ public class FishingMinigame : MonoBehaviour
     {
         catchFish = GetComponent<CatchFishes>();
         casting = GetComponent<CastingLine>();
-        catAnimator = casting.GetAnimator();
+        //catAnimator = casting.GetAnimator();
         if (fishGetTransform != null)
         {
             fishGetRotate = fishGetTransform.GetComponent<FishGetAnimation>();
@@ -198,6 +199,11 @@ public class FishingMinigame : MonoBehaviour
     public void SetGetAnimationBool(bool pBool)
     {
         inGetAnimation = pBool;
+    }
+
+    public void GetCatAni(Animator pAni)
+    {
+        catAnimator = pAni;
     }
 
     public bool BoolGetAnimation()

@@ -169,4 +169,9 @@ public class CastingLine : MonoBehaviour
         water.SetFloat("_Power", 0);
         water.SetVector("_BeginPos", Vector4.zero);
     }
+
+    public void GetAnimator(Animator pAni)
+    {
+        animator = pAni;
+    }
 }

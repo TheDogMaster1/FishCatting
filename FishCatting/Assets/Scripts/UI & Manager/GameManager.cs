@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool seenCutscene;
     private PlayerDataManager playerDataManager;
+    private CastingLine castingLine;
+    private FishCatching catching;
+    private FishingMinigame fishingMinigame;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -31,6 +34,9 @@ public class GameManager : MonoBehaviour
         instance = this;
         playerDataManager = GetComponent<PlayerDataManager>();
         seenCutscene = playerDataManager.LoadGame();
+        castingLine = GetComponent<CastingLine>();
+        catching = GetComponent<FishCatching>();
+        fishingMinigame = GetComponent<FishingMinigame>();
     }
     private void Start()
     {
@@ -39,6 +45,11 @@ public class GameManager : MonoBehaviour
             morgana = FindAnyObjectByType<Morgana>().transform;
             var morganaSkin = Instantiate(currentSkin, Vector3.zero, Quaternion.identity, morgana);
             morganaSkin.transform.localPosition = Vector3.zero;
+            Animator catAni = morganaSkin.GetComponent<Animator>();
+            castingLine.GetAnimator(catAni);
+            catching.GetCatAni(catAni);
+            fishingMinigame.GetCatAni(catAni);
+
         }
     }
     void Update()
