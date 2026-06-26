@@ -16,27 +16,10 @@ public class CheckCaught : MonoBehaviour
     {
         image = GetComponent<Image>();
         allFish = GameManager.instance.GetAllFish();
-        if (IsCaught(this.name))
-        {
-            image.sprite = fishImage;
-            if (GetComponent<Inspectable>() == null)
-            {
-                this.AddComponent<Inspectable>();
-                GetComponent<Inspectable>().closeButton = closeButton;
-            }
-        }
-        else
-        {
-            image.sprite = unknownImage;
-            if (GetComponent<Inspectable>() != null)
-            {
-                Destroy(GetComponent<Inspectable>());
-            }
-        }
     }
     void Update()
     {
-        //uncomment if you want to constantly check if fish is caught: should only really be used for testing as I'm sure you can't catch fish in whilst in this menu right?
+        //keep this in update just in case for problems with start
 
         if (IsCaught(this.name))
         {
