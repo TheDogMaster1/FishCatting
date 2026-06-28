@@ -30,7 +30,7 @@ public class CastingLine : MonoBehaviour
     private Touch tap;
 
     private bool bobberCasted = false;
-    private bool flying = false;
+    private bool casted = false;
 
     private FishingMinigame minigame;
 
@@ -45,7 +45,7 @@ public class CastingLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (minigame.BoolMiniGame() || minigame.BoolGetAnimation()) return;
+        if (minigame.BoolMiniGame() || minigame.BoolGetAnimation() || casted) return;
         if (Input.touchCount > 0)
         {
             tap = Input.GetTouch(0);
@@ -62,7 +62,8 @@ public class CastingLine : MonoBehaviour
 
     private IEnumerator CastBobber()
     {
-        if (clickPosition.GetTapPos("AllowCast") == Vector3.zero || flying) yield break;
+        casted = true;
+        if (clickPosition.GetTapPos("AllowCast") == Vector3.zero) yield break;
         bobberCasted = !bobberCasted;
         if (!bobberCasted)
         {
@@ -82,7 +83,6 @@ public class CastingLine : MonoBehaviour
 
     public IEnumerator ThrowReel(Vector3 target, Vector3 beginPos, float speed, float angle)
     {
-        flying = true;
         // this part of the script was gotten from https://discussions.unity.com/t/throw-an-object-along-a-parabola/490479 from user: Stephan-B
         // Short delay added before Projectile is thrown
 
@@ -114,7 +114,7 @@ public class CastingLine : MonoBehaviour
         }
         bobber.transform.rotation = Quaternion.Euler(Vector3.zero);
         StartCoroutine(LandingWaves());
-        flying = false;
+        casted = false;
     }
 
     private IEnumerator LandingWaves()
