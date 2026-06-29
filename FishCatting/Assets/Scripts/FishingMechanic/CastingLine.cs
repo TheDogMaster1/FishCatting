@@ -78,7 +78,7 @@ public class CastingLine : MonoBehaviour
         Vector3 tapPos = clickPosition.GetTapPos("AllowCast");
         if (!fishCatching.GetFishBitten()) yield return new WaitForSeconds(0.9f);
         yield return ThrowReel(tapPos, bobber.transform.position, castSpeed, castAngle);
-        StartCoroutine(fishCatching.CastingLine());
+        StartCoroutine(fishCatching.StartFishing());
     }
 
     public IEnumerator ThrowReel(Vector3 target, Vector3 beginPos, float speed, float angle)

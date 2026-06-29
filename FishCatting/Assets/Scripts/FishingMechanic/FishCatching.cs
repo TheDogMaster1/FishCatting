@@ -50,7 +50,7 @@ public class FishCatching : MonoBehaviour
         if (debugText != null) debugText.text = $"amount of fakebites: {fakeBitesAmount}  fakebites already happened: {fakebitesHappened}";
     }
 
-    public IEnumerator CastingLine()
+    public IEnumerator StartFishing()
     {
         while (!fishBitten)
         {

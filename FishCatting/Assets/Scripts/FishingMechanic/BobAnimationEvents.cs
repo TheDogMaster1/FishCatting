@@ -15,7 +15,7 @@ public class BobAnimationEvents : MonoBehaviour
         if (fishingMinigame.BoolMiniGame()) return;
         FishCatching.SetBittenBool(false);
         FishCatching.SetFishTime();
-        StartCoroutine(FishCatching.CastingLine());
+        StartCoroutine(FishCatching.StartFishing());
         Debug.Log("Fail :(");
     }
 
