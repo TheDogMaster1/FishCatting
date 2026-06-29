@@ -62,8 +62,8 @@ public class CastingLine : MonoBehaviour
 
     private IEnumerator CastBobber()
     {
-        casted = true;
         if (clickPosition.GetTapPos("AllowCast") == Vector3.zero) yield break;
+        casted = true;
         bobberCasted = !bobberCasted;
         if (!bobberCasted)
         {
