@@ -188,8 +188,21 @@ MonoBehaviour:
   locatedLocation: Lake
   skins:
   - {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
-  startingSkin: {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
-  currentSkin: {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
+  - {fileID: 8065721816458837448, guid: 852740bb3079d5444830a03207e05d17, type: 3}
+  - {fileID: 557420987998136019, guid: 60c1155813bb96e40858535890003d05, type: 3}
+  - {fileID: 1116518761953513406, guid: b94545279482f544f98b7706b8f0947f, type: 3}
+  customSkins:
+  - customskinName: 0
+    isUnlocked: 1
+  - customskinName: 1
+    isUnlocked: 0
+  - customskinName: 2
+    isUnlocked: 0
+  - customskinName: 3
+    isUnlocked: 0
+  currentSkin:
+    customskinName: 0
+    isUnlocked: 0
   createdFish: {fileID: 0}
   seenCutscene: 0
 --- !u!114 &2613096728610508620

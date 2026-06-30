@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 [System.Serializable]
 public class PlayerData
@@ -10,6 +9,6 @@ public class PlayerData
     public List<Fish> forestFishList;
     public List<Area> unlockedAreas;
     public string locatedLocation;
-    public List<GameObject> skins;
-    public GameObject currentSkin;
+    public List<CustomSkins> customSkins;
+    public CustomSkins currentSkin;
 }

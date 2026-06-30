@@ -19,7 +19,7 @@ public class PlayerDataManager : MonoBehaviour
             forestFishList = GameManager.instance.forestFishList,
             unlockedAreas = GameManager.instance.unlockedAreas,
             locatedLocation = GameManager.instance.locatedLocation,
-            skins = GameManager.instance.skins,
+            customSkins = GameManager.instance.customSkins,
             currentSkin = GameManager.instance.currentSkin
         };
         string json = JsonUtility.ToJson(playerData);
@@ -74,9 +74,9 @@ public class PlayerDataManager : MonoBehaviour
             {
                 GameManager.instance.locatedLocation = loadedData.locatedLocation;
             }
-            if (loadedData.skins != null)
+            if (loadedData.customSkins != null)
             {
-                GameManager.instance.skins = loadedData.skins;
+                GameManager.instance.customSkins = loadedData.customSkins;
             }
             if (loadedData.currentSkin != null)
             {
@@ -120,10 +120,13 @@ public class PlayerDataManager : MonoBehaviour
             forestFishList = null,
             unlockedAreas = null,
             locatedLocation = "Lake",
-            skins = new(),
-            currentSkin = GameManager.instance.startingSkin
+            customSkins = GameManager.instance.customSkins,
+            currentSkin = GameManager.instance.customSkins[0]
         };
-        playerData.skins.Add(GameManager.instance.startingSkin);
+        for (int i = 1; i < playerData.customSkins.Count; i++)
+        {
+            playerData.customSkins[i].isUnlocked = false;
+        }
         string json = JsonUtility.ToJson(playerData);
 #if (UNITY_WEBGL && !UNITY_EDITOR)
         string path = System.IO.Path.Combine("idbfs", Application.productName);

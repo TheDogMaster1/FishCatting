@@ -17,9 +17,10 @@ public class GameManager : MonoBehaviour
     public List<Area> unlockedAreas = new();
     public string locatedLocation;
     public List<GameObject> skins;
-    public GameObject startingSkin;
+    public List<CustomSkins> customSkins = new();
     [HideInInspector]
-    public GameObject currentSkin;
+    //public GameObject currentSkin;
+    public CustomSkins currentSkin;
     private Transform morgana;
     [HideInInspector]
     public GameObject createdFish;
@@ -42,10 +43,29 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        if (currentSkin != null && FindAnyObjectByType<Morgana>() != null)
+        if (skins != null && FindAnyObjectByType<Morgana>() != null)
         {
             morgana = FindAnyObjectByType<Morgana>().transform;
-            var morganaSkin = Instantiate(currentSkin, Vector3.zero, Quaternion.identity, morgana);
+            GameObject skinToSpawn = new();
+            switch (currentSkin.customskinName)
+            {
+                case CustomSkins.Skins.morgana:
+                    skinToSpawn = skins[0];
+                    break;
+                case CustomSkins.Skins.librarian:
+                    skinToSpawn = skins[1];
+                    break;
+                case CustomSkins.Skins.cute:
+                    skinToSpawn = skins[2];
+                    break;
+                case CustomSkins.Skins.cottage:
+                    skinToSpawn = skins[3];
+                    break;
+                default:
+                    skinToSpawn = skins[0];
+                    break;
+            }
+            var morganaSkin = Instantiate(skinToSpawn, Vector3.zero, Quaternion.identity, morgana);
             morganaSkin.transform.localPosition = Vector3.zero;
             Animator catAni = morganaSkin.GetComponent<Animator>();
             castingLine.GetAnimator(catAni);

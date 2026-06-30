@@ -7,7 +7,7 @@ public class SkinButton : MonoBehaviour
 {
     private TextMeshProUGUI buttonText;
     [SerializeField]
-    private GameObject skin;
+    private CustomSkins.Skins skin;
     [SerializeField]
     private int Cost = 10;
     [SerializeField]
@@ -27,10 +27,18 @@ public class SkinButton : MonoBehaviour
 
     public void CheckBoughtSkin()
     {
-        if (skin == null) return;
-        if (GameManager.instance.skins.Contains(skin))
+        CustomSkins thisSkin = new();
+        foreach (var customskin in GameManager.instance.customSkins)
         {
-            buttonText.text = GameManager.instance.currentSkin == skin ? "Equipped" : "Equip";
+            if (customskin.customskinName == skin)
+            {
+                thisSkin = customskin;
+                break;
+            }
+        }
+        if (thisSkin.isUnlocked)
+        {
+            buttonText.text = GameManager.instance.currentSkin.customskinName == skin ? "Equipped" : "Equip";
             skinShowcase.sprite = boughtTexture;
             SkinManager.Instance.AddBoughtButton(this);
             BoughtSkin = true;
@@ -52,19 +60,27 @@ public class SkinButton : MonoBehaviour
         }
         else
         {
-            StartCoroutine(BuySkin());
+            StartCoroutine(BuySkin(skin));
         }
     }
 
-    private IEnumerator BuySkin()
+    private IEnumerator BuySkin(CustomSkins.Skins skinToBuy)
     {
         if (GameManager.instance.Buy(Cost))
         {
             SkinManager.Instance.AddBoughtButton(this);
-            GameManager.instance.skins.Add(skin);
-            BoughtSkin = true;
-            StartCoroutine(SkinManager.Instance.EquipSkin(skin, this));
-            skinShowcase.sprite = boughtTexture;
+            foreach (var customSkin in GameManager.instance.customSkins)
+            {
+                if (customSkin.customskinName == skinToBuy)
+                {
+                    customSkin.isUnlocked = true;
+                    BoughtSkin = true;
+                    StartCoroutine(SkinManager.Instance.EquipSkin(skin, this));
+                    skinShowcase.sprite = boughtTexture;
+                    yield break;
+                }
+            }
+            Debug.LogWarning("Couldn't find any skins");
         }
         else
         {
@@ -74,7 +90,7 @@ public class SkinButton : MonoBehaviour
         }
     }
 
-    public GameObject ReturnSkin()
+    public CustomSkins.Skins ReturnSkin()
     {
         return skin;
     }

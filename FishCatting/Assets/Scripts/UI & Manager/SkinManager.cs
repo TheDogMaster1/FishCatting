@@ -15,12 +15,12 @@ public class SkinManager : MonoBehaviour
         Instance = this;
     }
 
-    public IEnumerator EquipSkin(GameObject pSkin, SkinButton pSelectedButton)
+    public IEnumerator EquipSkin(CustomSkins.Skins skinToEquip, SkinButton pSelectedButton)
     {
         TextMeshProUGUI buttonText = pSelectedButton.GetComponentInChildren<TextMeshProUGUI>();
-        if (pSkin != null && GameManager.instance.currentSkin != pSkin)
+        if (GameManager.instance.currentSkin.customskinName != skinToEquip)
         {
-            GameManager.instance.currentSkin = pSkin;
+            GameManager.instance.currentSkin.customskinName = skinToEquip;
             foreach (var button in boughtButtons)
             {
                 TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
@@ -34,7 +34,7 @@ public class SkinManager : MonoBehaviour
         {
             buttonText.text = "Skin Already Equipped";
             yield return new WaitForSeconds(2f);
-            buttonText.text = GameManager.instance.currentSkin == pSelectedButton.ReturnSkin() ? "Equipped" : "Equip";
+            buttonText.text = GameManager.instance.currentSkin.customskinName == pSelectedButton.ReturnSkin() ? "Equipped" : "Equip";
         }
     }
 
