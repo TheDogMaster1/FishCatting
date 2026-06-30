@@ -123,11 +123,14 @@ public class PlayerDataManager : MonoBehaviour
             customSkins = GameManager.instance.customSkins,
             currentSkin = GameManager.instance.customSkins[0]
         };
-        foreach (var customskin in playerData.customSkins)
+        if (playerData.customSkins != null)
         {
-            customskin.isUnlocked = false;
+            foreach (var customskin in playerData.customSkins)
+            {
+                customskin.isUnlocked = false;
+            }
+            playerData.customSkins[0].isUnlocked = true;
         }
-        playerData.customSkins[0].isUnlocked = true;
         string json = JsonUtility.ToJson(playerData);
 #if (UNITY_WEBGL && !UNITY_EDITOR)
         string path = System.IO.Path.Combine("idbfs", Application.productName);
