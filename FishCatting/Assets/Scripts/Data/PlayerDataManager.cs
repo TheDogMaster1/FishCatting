@@ -120,9 +120,10 @@ public class PlayerDataManager : MonoBehaviour
             forestFishList = null,
             unlockedAreas = null,
             locatedLocation = "Lake",
-            skins = null,
-            currentSkin = null
+            skins = new(),
+            currentSkin = GameManager.instance.startingSkin
         };
+        playerData.skins.Add(GameManager.instance.startingSkin);
         string json = JsonUtility.ToJson(playerData);
 #if (UNITY_WEBGL && !UNITY_EDITOR)
         string path = System.IO.Path.Combine("idbfs", Application.productName);

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public List<Area> unlockedAreas = new();
     public string locatedLocation;
     public List<GameObject> skins;
+    public GameObject startingSkin;
+    [HideInInspector]
     public GameObject currentSkin;
     private Transform morgana;
     [HideInInspector]

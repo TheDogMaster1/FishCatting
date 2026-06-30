@@ -188,6 +188,7 @@ MonoBehaviour:
   locatedLocation: Lake
   skins:
   - {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
+  startingSkin: {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
   currentSkin: {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
   createdFish: {fileID: 0}
   seenCutscene: 0
@@ -290,3 +291,4 @@ MonoBehaviour:
     upTimerSpeed: 0.12
     downTimerSpeed: 0.2
     beginValue: 0.1
+  catAnimator: {fileID: 0}
