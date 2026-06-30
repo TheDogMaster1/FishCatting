@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 [RequireComponent(typeof(GameManager))]
 public class PlayerDataManager : MonoBehaviour
 {
     public static PlayerDataManager instance;
+
+    [SerializeField]
+    private List<CustomSkins> customSkins = new();
     void Awake()
     {
         instance = this;
@@ -131,8 +135,8 @@ public class PlayerDataManager : MonoBehaviour
             forestFishList = null,
             unlockedAreas = null,
             locatedLocation = "Lake",
-            customSkins = GameManager.instance.customSkins,
-            currentSkin = GameManager.instance.customSkins[0]
+            customSkins = customSkins,
+            currentSkin = customSkins[0]
         };
         if (playerData.customSkins != null)
         {
