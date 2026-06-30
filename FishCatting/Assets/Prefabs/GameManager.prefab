@@ -49,6 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4923b5f4923515b4ab82bbafc3cb407d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
+  customSkins:
+  - customskinName: 0
+    isUnlocked: 1
+  - customskinName: 1
+    isUnlocked: 0
+  - customskinName: 2
+    isUnlocked: 0
+  - customskinName: 3
+    isUnlocked: 0
 --- !u!114 &869568268551702988
 MonoBehaviour:
   m_ObjectHideFlags: 0

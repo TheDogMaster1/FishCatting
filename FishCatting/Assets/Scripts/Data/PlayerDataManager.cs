@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 [RequireComponent(typeof(GameManager))]
 public class PlayerDataManager : MonoBehaviour
 {
     public static PlayerDataManager instance;
+
+    [SerializeField]
+    private List<CustomSkins> customSkins = new();
     void Awake()
     {
         instance = this;
