@@ -49,7 +49,128 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4923b5f4923515b4ab82bbafc3cb407d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
-  customSkins:
+  newLakeFishList:
+  - name: Trout
+    value: 22
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    rarity: 0
+    rarityWeight: 95
+    caught: 0
+  - name: Carp
+    value: 27
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 85
+    caught: 0
+  - name: Crappie
+    value: 35
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 85
+    caught: 0
+  - name: FishCat
+    value: 60
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 50
+    caught: 0
+  - name: GoldFish
+    value: 70
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 45
+    caught: 0
+  - name: Crab
+    value: 250
+    fishModel: {fileID: 0}
+    rarity: 2
+    rarityWeight: 15
+    caught: 0
+  newSeaFishList:
+  - name: Mackerel
+    value: 35
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 130
+    caught: 0
+  - name: Ray
+    value: 40
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 120
+    caught: 0
+  - name: Bass
+    value: 45
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 110
+    caught: 0
+  - name: Tuna
+    value: 90
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 45
+    caught: 0
+  - name: Squid
+    value: 115
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 40
+    caught: 0
+  - name: SunFish
+    value: 350
+    fishModel: {fileID: 0}
+    rarity: 2
+    rarityWeight: 10
+    caught: 0
+  newForestFishList:
+  - name: Pike
+    value: 55
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 175
+    caught: 0
+  - name: CatFish
+    value: 65
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 160
+    caught: 0
+  - name: Eel
+    value: 75
+    fishModel: {fileID: 0}
+    rarity: 0
+    rarityWeight: 150
+    caught: 0
+  - name: Salmon
+    value: 90
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 80
+    caught: 0
+  - name: CrayFish
+    value: 125
+    fishModel: {fileID: 0}
+    rarity: 1
+    rarityWeight: 75
+    caught: 0
+  - name: Frog
+    value: 555
+    fishModel: {fileID: 0}
+    rarity: 2
+    rarityWeight: 8
+    caught: 0
+  newUnlockedAreas:
+  - name: Lake
+    cost: 0
+    unlocked: 1
+  - name: Sea
+    cost: 600
+    unlocked: 0
+  - name: Forest
+    cost: 2500
+    unlocked: 0
+  newCustomSkins:
   - customskinName: 0
     isUnlocked: 1
   - customskinName: 1

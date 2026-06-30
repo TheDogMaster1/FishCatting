@@ -7,7 +7,15 @@ public class PlayerDataManager : MonoBehaviour
     public static PlayerDataManager instance;
 
     [SerializeField]
-    private List<CustomSkins> customSkins = new();
+    private List<Fish> newLakeFishList = new();
+    [SerializeField]
+    private List<Fish> newSeaFishList = new();
+    [SerializeField]
+    private List<Fish> newForestFishList = new();
+    [SerializeField]
+    private List<Area> newUnlockedAreas = new();
+    [SerializeField]
+    private List<CustomSkins> newCustomSkins = new();
     void Awake()
     {
         instance = this;
@@ -107,43 +115,16 @@ public class PlayerDataManager : MonoBehaviour
         string path = Application.persistentDataPath + "/playerData.json";
 #endif
         File.Delete(path);
-        //reset all savedata
-        foreach (var fish in GameManager.instance.lakeFishList)
-        {
-            fish.caught = false;
-        }
-        foreach (var fish in GameManager.instance.seaFishList)
-        {
-            fish.caught = false;
-        }
-        foreach (var fish in GameManager.instance.forestFishList)
-        {
-            fish.caught = false;
-        }
-        foreach (var area in GameManager.instance.unlockedAreas)
-        {
-            if (area.name != "Lake")
-            {
-                area.unlocked = false;
-            }
-        }
-        foreach (var customskin in GameManager.instance.customSkins)
-        {
-            if (customskin.customskinName != CustomSkins.Skins.morgana)
-            {
-                customskin.isUnlocked = false;
-            }
-        }
         PlayerData playerData = new()
         {
             money = 0,
-            lakeFishList = null,
-            seaFishList = null,
-            forestFishList = null,
-            unlockedAreas = null,
+            lakeFishList = newLakeFishList,
+            seaFishList = newSeaFishList,
+            forestFishList = newForestFishList,
+            unlockedAreas = newUnlockedAreas,
             locatedLocation = "Lake",
-            customSkins = null,
-            currentSkin = null
+            customSkins = newCustomSkins,
+            currentSkin = newCustomSkins[0]
         };
         string json = JsonUtility.ToJson(playerData);
         File.WriteAllText(path, json);
