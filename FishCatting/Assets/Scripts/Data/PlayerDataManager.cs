@@ -92,6 +92,17 @@ public class PlayerDataManager : MonoBehaviour
     }
     public void NewGame()
     {
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+        string path = System.IO.Path.Combine("idbfs", Application.productName);
+                if(!File.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        path = System.IO.Path.Combine(path, "saveDataFishing");
+#else
+        string path = Application.persistentDataPath + "/playerData.json";
+#endif
+        File.Delete(path);
         //reset all savedata
         foreach (var fish in GameManager.instance.lakeFishList)
         {
@@ -132,16 +143,6 @@ public class PlayerDataManager : MonoBehaviour
             playerData.customSkins[0].isUnlocked = true;
         }
         string json = JsonUtility.ToJson(playerData);
-#if (UNITY_WEBGL && !UNITY_EDITOR)
-        string path = System.IO.Path.Combine("idbfs", Application.productName);
-                if(!File.Exists(path))
-        {
-            Directory.CreateDirectory(path);
-        }
-        path = System.IO.Path.Combine(path, "saveDataFishing");
-#else
-        string path = Application.persistentDataPath + "/playerData.json";
-#endif
         File.WriteAllText(path, json);
         LoadGame();
         SaveGame();
