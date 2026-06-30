@@ -74,7 +74,7 @@ public class PlayerDataManager : MonoBehaviour
             {
                 GameManager.instance.locatedLocation = loadedData.locatedLocation;
             }
-            if (loadedData.customSkins != null)
+            if (loadedData.customSkins != null && loadedData.customSkins.Count != 0)
             {
                 GameManager.instance.customSkins = loadedData.customSkins;
             }
@@ -123,6 +123,13 @@ public class PlayerDataManager : MonoBehaviour
                 area.unlocked = false;
             }
         }
+        foreach (var customskin in GameManager.instance.customSkins)
+        {
+            if (customskin.customskinName != CustomSkins.Skins.morgana)
+            {
+                customskin.isUnlocked = false;
+            }
+        }
         PlayerData playerData = new()
         {
             money = 0,
@@ -131,17 +138,9 @@ public class PlayerDataManager : MonoBehaviour
             forestFishList = null,
             unlockedAreas = null,
             locatedLocation = "Lake",
-            customSkins = GameManager.instance.customSkins,
-            currentSkin = GameManager.instance.customSkins[0]
+            customSkins = null,
+            currentSkin = null
         };
-        if (playerData.customSkins != null)
-        {
-            foreach (var customskin in playerData.customSkins)
-            {
-                customskin.isUnlocked = false;
-            }
-            playerData.customSkins[0].isUnlocked = true;
-        }
         string json = JsonUtility.ToJson(playerData);
         File.WriteAllText(path, json);
         LoadGame();
