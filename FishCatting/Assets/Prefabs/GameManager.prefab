@@ -58,31 +58,31 @@ MonoBehaviour:
     caught: 0
   - name: Carp
     value: 27
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 0
     rarityWeight: 85
     caught: 0
   - name: Crappie
     value: 35
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 0
     rarityWeight: 85
     caught: 0
   - name: FishCat
     value: 60
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 1
     rarityWeight: 50
     caught: 0
   - name: GoldFish
     value: 70
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 1
     rarityWeight: 45
     caught: 0
   - name: Crab
     value: 250
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
     rarity: 2
     rarityWeight: 15
     caught: 0
