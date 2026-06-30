@@ -130,6 +130,10 @@ public class PlayerDataManager : MonoBehaviour
         string json = JsonUtility.ToJson(playerData);
 #if (UNITY_WEBGL && !UNITY_EDITOR)
         string path = System.IO.Path.Combine("idbfs", Application.productName);
+                if(!File.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
         path = System.IO.Path.Combine(path, "saveDataFishing");
 #else
         string path = Application.persistentDataPath + "/playerData.json";
