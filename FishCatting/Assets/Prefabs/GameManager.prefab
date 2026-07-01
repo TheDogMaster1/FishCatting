@@ -354,9 +354,9 @@ MonoBehaviour:
   locatedLocation: Lake
   skins:
   - {fileID: 8796569510890218671, guid: 46011269910063e43aec79c768eec7c7, type: 3}
-  - {fileID: 8065721816458837448, guid: 852740bb3079d5444830a03207e05d17, type: 3}
-  - {fileID: 557420987998136019, guid: 60c1155813bb96e40858535890003d05, type: 3}
-  - {fileID: 1116518761953513406, guid: b94545279482f544f98b7706b8f0947f, type: 3}
+  - {fileID: 5963377006072701678, guid: 4f01c89ea7cf06c45a2e186539c43672, type: 3}
+  - {fileID: 5207549825816756615, guid: 16b073f1f8a354a4cbd893e54f7240f2, type: 3}
+  - {fileID: 1568242843382412291, guid: 6957da9b53bc6bc449bf5b432194c41f, type: 3}
   customSkins:
   - customskinName: 0
     isUnlocked: 1
