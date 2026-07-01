@@ -1086,7 +1086,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2015714486}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2151843720909926869, guid: 46603fe7ea67d6f4cbbc6b1cfe4563ab, type: 3}
       propertyPath: m_Name
@@ -1177,22 +1177,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46603fe7ea67d6f4cbbc6b1cfe4563ab, type: 3}
---- !u!224 &1683646934 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5939760087078316904, guid: 46603fe7ea67d6f4cbbc6b1cfe4563ab, type: 3}
-  m_PrefabInstance: {fileID: 1683646933}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1683646935 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2898398402057649646, guid: 46603fe7ea67d6f4cbbc6b1cfe4563ab, type: 3}
-  m_PrefabInstance: {fileID: 1683646933}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1949791169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1273,6 +1257,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1639040690674337777, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917943188164981753, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3866303656709250829, guid: ab09d74f929bd2c4f93a18ed94d92e46, type: 3}
@@ -1492,3 +1480,4 @@ SceneRoots:
   - {fileID: 1134417104}
   - {fileID: 99412408}
   - {fileID: 1594210737}
+  - {fileID: 1683646933}
