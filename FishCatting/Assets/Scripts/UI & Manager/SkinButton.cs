@@ -11,10 +11,6 @@ public class SkinButton : MonoBehaviour
     [SerializeField]
     private int Cost = 10;
     [SerializeField]
-    private Sprite boughtTexture;
-    [SerializeField]
-    private Sprite unBoughtTexture;
-    [SerializeField]
     private Image skinShowcase;
 
     private bool BoughtSkin = false;
@@ -39,14 +35,14 @@ public class SkinButton : MonoBehaviour
         if (thisSkin.isUnlocked)
         {
             buttonText.text = GameManager.instance.currentSkin.customskinName == skin ? "Equipped" : "Equip";
-            skinShowcase.sprite = boughtTexture;
+            skinShowcase.color = Color.white;
             SkinManager.Instance.AddBoughtButton(this);
             BoughtSkin = true;
         }
         else
         {
-            buttonText.text = "Buy";
-            skinShowcase.sprite = unBoughtTexture;
+            buttonText.text = "Buy   Cost: " + Cost;
+            skinShowcase.color = Color.black;
             BoughtSkin = false;
         }
     }
@@ -76,7 +72,7 @@ public class SkinButton : MonoBehaviour
                     customSkin.isUnlocked = true;
                     BoughtSkin = true;
                     StartCoroutine(SkinManager.Instance.EquipSkin(skin, this));
-                    skinShowcase.sprite = boughtTexture;
+                    skinShowcase.color = Color.white;
                     yield break;
                 }
             }
@@ -86,7 +82,7 @@ public class SkinButton : MonoBehaviour
         {
             buttonText.text = "Too Expensive!!";
             yield return new WaitForSeconds(2);
-            buttonText.text = "Buy";
+            buttonText.text = "Buy   Cost: " + Cost;
         }
     }
 

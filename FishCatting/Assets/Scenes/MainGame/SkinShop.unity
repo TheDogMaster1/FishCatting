@@ -882,6 +882,7 @@ GameObject:
   - component: {fileID: 317375697}
   - component: {fileID: 317375696}
   - component: {fileID: 317375695}
+  - component: {fileID: 317375698}
   m_Layer: 5
   m_Name: BuyNormal
   m_TagString: Untagged
@@ -952,7 +953,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 317375696}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 317375698}
+        m_TargetAssemblyTypeName: SkinButton, Assembly-CSharp
+        m_MethodName: UseSkinButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &317375696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +1004,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317375693}
   m_CullTransparentMesh: 1
+--- !u!114 &317375698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317375693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinButton
+  skin: 0
+  Cost: 10
+  boughtTexture: {fileID: 21300000, guid: c9f06d76f8dc97346be0f0f0a1c99aad, type: 3}
+  unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
+  skinShowcase: {fileID: 1675631917}
 --- !u!1 &424805151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +2111,7 @@ GameObject:
   - component: {fileID: 760993956}
   - component: {fileID: 760993955}
   - component: {fileID: 760993954}
+  - component: {fileID: 760993957}
   m_Layer: 5
   m_Name: BuyCottage
   m_TagString: Untagged
@@ -2151,7 +2182,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760993955}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 760993957}
+        m_TargetAssemblyTypeName: SkinButton, Assembly-CSharp
+        m_MethodName: UseSkinButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &760993955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,6 +2233,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760993952}
   m_CullTransparentMesh: 1
+--- !u!114 &760993957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760993952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinButton
+  skin: 3
+  Cost: 10
+  boughtTexture: {fileID: 21300000, guid: d4a8ce9688b8b864c8498732a3099097, type: 3}
+  unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
+  skinShowcase: {fileID: 1960439676}
 --- !u!1 &885024857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,6 +2262,7 @@ GameObject:
   - component: {fileID: 885024861}
   - component: {fileID: 885024860}
   - component: {fileID: 885024859}
+  - component: {fileID: 885024862}
   m_Layer: 5
   m_Name: BuySoft
   m_TagString: Untagged
@@ -2272,7 +2333,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 885024860}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 885024862}
+        m_TargetAssemblyTypeName: SkinButton, Assembly-CSharp
+        m_MethodName: UseSkinButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &885024860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2311,6 +2384,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885024857}
   m_CullTransparentMesh: 1
+--- !u!114 &885024862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885024857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinButton
+  skin: 2
+  Cost: 10
+  boughtTexture: {fileID: 21300000, guid: 6dce23ce0f2d0f14b88ea38a411e25a3, type: 3}
+  unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
+  skinShowcase: {fileID: 1139589914}
 --- !u!1 &924842743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,6 +2752,7 @@ GameObject:
   - component: {fileID: 996047497}
   - component: {fileID: 996047496}
   - component: {fileID: 996047495}
+  - component: {fileID: 996047498}
   m_Layer: 5
   m_Name: BuyDarkAcademia
   m_TagString: Untagged
@@ -2732,7 +2823,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 996047496}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 996047498}
+        m_TargetAssemblyTypeName: SkinButton, Assembly-CSharp
+        m_MethodName: UseSkinButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &996047496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2771,6 +2874,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996047493}
   m_CullTransparentMesh: 1
+--- !u!114 &996047498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996047493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bd66dcf76bfcb40a320e326f7d2592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinButton
+  skin: 1
+  Cost: 10
+  boughtTexture: {fileID: 21300000, guid: 3360d3f661298454e86082d950c4886a, type: 3}
+  unBoughtTexture: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
+  skinShowcase: {fileID: 304196325}
 --- !u!1 &1017059111
 GameObject:
   m_ObjectHideFlags: 0
