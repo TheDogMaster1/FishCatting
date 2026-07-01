@@ -8,6 +8,7 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
     private Camera mainCamera;
     private List<Fish> allFishes = new();
     public GameObject closeButton;
+    public GameObject darkener;
     void Start()
     {
         mainCamera = FindFirstObjectByType<Camera>();
@@ -19,6 +20,7 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
         if (fish.fishModel != null)
         {
             closeButton.SetActive(true);
+            darkener.SetActive(true);
             return Instantiate(fish.fishModel, mainCamera.transform.position + new Vector3(0, 0, 3), transform.rotation);
         }
         else
