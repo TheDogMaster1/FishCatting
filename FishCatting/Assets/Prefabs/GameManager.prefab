@@ -353,7 +353,7 @@ MonoBehaviour:
     unlocked: 0
   locatedLocation: Lake
   skins:
-  - {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
+  - {fileID: 8796569510890218671, guid: 46011269910063e43aec79c768eec7c7, type: 3}
   - {fileID: 8065721816458837448, guid: 852740bb3079d5444830a03207e05d17, type: 3}
   - {fileID: 557420987998136019, guid: 60c1155813bb96e40858535890003d05, type: 3}
   - {fileID: 1116518761953513406, guid: b94545279482f544f98b7706b8f0947f, type: 3}
