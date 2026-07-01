@@ -708,7 +708,7 @@ PrefabInstance:
     - target: {fileID: 2822743610628606451, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: bobAnimationEvents
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8693176439231113111}
     - target: {fileID: 5114614595115533744, guid: 409065d175f9a31479bd76d5321b1629, type: 3}
       propertyPath: m_Name
       value: GameManager
