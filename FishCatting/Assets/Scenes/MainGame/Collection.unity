@@ -1987,7 +1987,7 @@ GameObject:
   - component: {fileID: 1223152453}
   - component: {fileID: 1223152452}
   m_Layer: 5
-  m_Name: FishCat
+  m_Name: FlatFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
