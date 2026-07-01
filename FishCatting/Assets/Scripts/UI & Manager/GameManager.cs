@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         if (coinText != null)
         {
-            coinText.text = $"money: {money}";
+            coinText.text = $"{money}";
         }
     }
     public void ChangeLocation(int locationID)
