@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1584, y: 74}
+  m_AnchoredPosition: {x: 1620, y: 63}
   m_SizeDelta: {x: 176, y: 176}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &5468752
@@ -317,6 +317,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &271059988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +409,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &318247033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +501,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &389405222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,6 +593,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &406933479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,6 +685,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &483175765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +788,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &621910061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,6 +1260,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &847933136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1352,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &859172268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,6 +1493,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1043561667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043561668}
+  - component: {fileID: 1043561670}
+  - component: {fileID: 1043561669}
+  m_Layer: 5
+  m_Name: Darkener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1043561668
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043561667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1582285316}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1043561669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043561667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.68235296}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1043561670
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043561667}
+  m_CullTransparentMesh: 1
 --- !u!1 &1156551294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1897,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1223152453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,6 +1989,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1225361446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +2081,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1280600144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,6 +2646,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1538024726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3056,6 +3143,7 @@ RectTransform:
   - {fileID: 1372527579}
   - {fileID: 1574262056}
   - {fileID: 1858835752}
+  - {fileID: 1043561668}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3253,6 +3341,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1629407110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3516,6 +3605,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1806538476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3979,6 +4069,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1878798729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4070,6 +4161,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &1907747055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4161,6 +4253,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &2008569697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4283,6 +4376,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2041730990}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1043561667}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4547,6 +4652,7 @@ MonoBehaviour:
   unknownImage: {fileID: 21300000, guid: ac5a008e8e438724b8e50ea15bd01fd1, type: 3}
   fishImage: {fileID: 21300000, guid: 1fce72823a6458340989f7361798b762, type: 3}
   closeButton: {fileID: 2041730990}
+  darkener: {fileID: 1043561667}
 --- !u!114 &2102427562
 MonoBehaviour:
   m_ObjectHideFlags: 0
