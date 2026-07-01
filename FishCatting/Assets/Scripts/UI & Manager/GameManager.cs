@@ -16,11 +16,20 @@ public class GameManager : MonoBehaviour
     public List<Fish> forestFishList = new();
     public List<Area> unlockedAreas = new();
     public string locatedLocation;
+    public List<GameObject> skins;
+    public List<CustomSkins> customSkins = new();
+    [HideInInspector]
+    //public GameObject currentSkin;
+    public CustomSkins currentSkin;
+    private Transform morgana;
     [HideInInspector]
     public GameObject createdFish;
     [HideInInspector]
     public bool seenCutscene;
     private PlayerDataManager playerDataManager;
+    private CastingLine castingLine;
+    private FishCatching catching;
+    private FishingMinigame fishingMinigame;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -28,10 +37,46 @@ public class GameManager : MonoBehaviour
         instance = this;
         playerDataManager = GetComponent<PlayerDataManager>();
         seenCutscene = playerDataManager.LoadGame();
+        castingLine = GetComponent<CastingLine>();
+        catching = GetComponent<FishCatching>();
+        fishingMinigame = GetComponent<FishingMinigame>();
+    }
+    private void Start()
+    {
+        if (skins != null && FindAnyObjectByType<Morgana>() != null)
+        {
+            morgana = FindAnyObjectByType<Morgana>().transform;
+            GameObject skinToSpawn = new();
+            switch (currentSkin.customskinName)
+            {
+                case CustomSkins.Skins.morgana:
+                    skinToSpawn = skins[0];
+                    break;
+                case CustomSkins.Skins.librarian:
+                    skinToSpawn = skins[1];
+                    break;
+                case CustomSkins.Skins.cute:
+                    skinToSpawn = skins[2];
+                    break;
+                case CustomSkins.Skins.cottage:
+                    skinToSpawn = skins[3];
+                    break;
+                default:
+                    skinToSpawn = skins[0];
+                    break;
+            }
+            var morganaSkin = Instantiate(skinToSpawn, Vector3.zero, Quaternion.identity, morgana);
+            morganaSkin.transform.localPosition = Vector3.zero;
+            Animator catAni = morganaSkin.GetComponent<Animator>();
+            castingLine.GetAnimator(catAni);
+            catching.GetCatAni(catAni);
+            fishingMinigame.GetCatAni(catAni);
+
+        }
     }
     void Update()
     {
-        if(coinText != null)
+        if (coinText != null)
         {
             coinText.text = $"money: {money}";
         }

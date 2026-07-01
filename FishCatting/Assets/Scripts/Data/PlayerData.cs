@@ -9,5 +9,6 @@ public class PlayerData
     public List<Fish> forestFishList;
     public List<Area> unlockedAreas;
     public string locatedLocation;
-
+    public List<CustomSkins> customSkins;
+    public CustomSkins currentSkin;
 }

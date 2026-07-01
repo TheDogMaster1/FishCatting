@@ -1,9 +1,21 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 [RequireComponent(typeof(GameManager))]
 public class PlayerDataManager : MonoBehaviour
 {
     public static PlayerDataManager instance;
+
+    [SerializeField]
+    private List<Fish> newLakeFishList = new();
+    [SerializeField]
+    private List<Fish> newSeaFishList = new();
+    [SerializeField]
+    private List<Fish> newForestFishList = new();
+    [SerializeField]
+    private List<Area> newUnlockedAreas = new();
+    [SerializeField]
+    private List<CustomSkins> newCustomSkins = new();
     void Awake()
     {
         instance = this;
@@ -18,17 +30,33 @@ public class PlayerDataManager : MonoBehaviour
             seaFishList = GameManager.instance.seaFishList,
             forestFishList = GameManager.instance.forestFishList,
             unlockedAreas = GameManager.instance.unlockedAreas,
-            locatedLocation = GameManager.instance.locatedLocation
+            locatedLocation = GameManager.instance.locatedLocation,
+            customSkins = GameManager.instance.customSkins,
+            currentSkin = GameManager.instance.currentSkin
         };
         string json = JsonUtility.ToJson(playerData);
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+        string path = System.IO.Path.Combine("idbfs", Application.productName);
+        if(!File.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        path = System.IO.Path.Combine(path, "saveDataFishing");
+#else
         string path = Application.persistentDataPath + "/playerData.json";
+#endif
         File.WriteAllText(path, json);
     }
     public bool LoadGame()
     {
         //we load the data from the json file called playerData.json unless it's not found, in which case we do a debug log.
         //not having the save file only means the user hasn't played before or deleted it! this should NOT stop you from playing.
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+        string path = System.IO.Path.Combine("idbfs", Application.productName);
+        path = System.IO.Path.Combine(path, "saveDataFishing");
+#else
         string path = Application.persistentDataPath + "/playerData.json";
+#endif
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
@@ -50,13 +78,21 @@ public class PlayerDataManager : MonoBehaviour
             {
                 GameManager.instance.unlockedAreas = loadedData.unlockedAreas;
             }
-            if(loadedData.locatedLocation == null)
+            if (loadedData.locatedLocation == null)
             {
                 GameManager.instance.locatedLocation = "Lake";
             }
             else
             {
                 GameManager.instance.locatedLocation = loadedData.locatedLocation;
+            }
+            if (loadedData.customSkins != null && loadedData.customSkins.Count != 0)
+            {
+                GameManager.instance.customSkins = loadedData.customSkins;
+            }
+            if (loadedData.currentSkin != null)
+            {
+                GameManager.instance.currentSkin = loadedData.currentSkin;
             }
             return true;
         }
@@ -68,37 +104,29 @@ public class PlayerDataManager : MonoBehaviour
     }
     public void NewGame()
     {
-        //reset all savedata
-        foreach (var fish in GameManager.instance.lakeFishList)
+#if (UNITY_WEBGL && !UNITY_EDITOR)
+        string path = System.IO.Path.Combine("idbfs", Application.productName);
+                if(!File.Exists(path))
         {
-            fish.caught = false;
+            Directory.CreateDirectory(path);
         }
-        foreach (var fish in GameManager.instance.seaFishList)
-        {
-            fish.caught = false;
-        }
-        foreach (var fish in GameManager.instance.forestFishList)
-        {
-            fish.caught = false;
-        }
-        foreach (var area in GameManager.instance.unlockedAreas)
-        {
-            if (area.name != "Lake")
-            {
-                area.unlocked = false;
-            }
-        }
+        path = System.IO.Path.Combine(path, "saveDataFishing");
+#else
+        string path = Application.persistentDataPath + "/playerData.json";
+#endif
+        File.Delete(path);
         PlayerData playerData = new()
         {
             money = 0,
-            lakeFishList = null,
-            seaFishList = null,
-            forestFishList = null,
-            unlockedAreas = null,
-            locatedLocation = "Lake"
+            lakeFishList = newLakeFishList,
+            seaFishList = newSeaFishList,
+            forestFishList = newForestFishList,
+            unlockedAreas = newUnlockedAreas,
+            locatedLocation = "Lake",
+            customSkins = newCustomSkins,
+            currentSkin = newCustomSkins[0]
         };
         string json = JsonUtility.ToJson(playerData);
-        string path = Application.persistentDataPath + "/playerData.json";
         File.WriteAllText(path, json);
         LoadGame();
         SaveGame();

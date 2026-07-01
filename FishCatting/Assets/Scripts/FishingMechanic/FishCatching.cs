@@ -38,7 +38,7 @@ public class FishCatching : MonoBehaviour
     void Start()
     {
         casting = GetComponent<CastingLine>();
-        catAnimator = casting.GetAnimator();
+        //catAnimator = casting.GetAnimator();
         bobber = casting.GetBobber();
         bobAnimator = bobber.GetComponentInChildren<Animator>();
         catchFish = GetComponent<CatchFishes>();
@@ -50,7 +50,7 @@ public class FishCatching : MonoBehaviour
         if (debugText != null) debugText.text = $"amount of fakebites: {fakeBitesAmount}  fakebites already happened: {fakebitesHappened}";
     }
 
-    public IEnumerator CastingLine()
+    public IEnumerator StartFishing()
     {
         while (!fishBitten)
         {
@@ -114,6 +114,10 @@ public class FishCatching : MonoBehaviour
     public void SetBittenBool(bool pBool)
     {
         fishBitten = pBool;
+    }
+    public void GetCatAni(Animator pAni)
+    {
+        catAnimator = pAni;
     }
 
     public bool GetFishBitten()

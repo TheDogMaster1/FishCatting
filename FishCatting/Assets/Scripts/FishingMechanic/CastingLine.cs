@@ -30,7 +30,7 @@ public class CastingLine : MonoBehaviour
     private Touch tap;
 
     private bool bobberCasted = false;
-    private bool flying = false;
+    private bool casted = false;
 
     private FishingMinigame minigame;
 
@@ -45,7 +45,7 @@ public class CastingLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (minigame.BoolMiniGame() || minigame.BoolGetAnimation()) return;
+        if (minigame.BoolMiniGame() || minigame.BoolGetAnimation() || casted) return;
         if (Input.touchCount > 0)
         {
             tap = Input.GetTouch(0);
@@ -62,7 +62,8 @@ public class CastingLine : MonoBehaviour
 
     private IEnumerator CastBobber()
     {
-        if (clickPosition.GetTapPos("AllowCast") == Vector3.zero || flying) yield break;
+        if (clickPosition.GetTapPos("AllowCast") == Vector3.zero && !bobberCasted) yield break;
+        casted = true;
         bobberCasted = !bobberCasted;
         if (!bobberCasted)
         {
@@ -77,12 +78,11 @@ public class CastingLine : MonoBehaviour
         Vector3 tapPos = clickPosition.GetTapPos("AllowCast");
         if (!fishCatching.GetFishBitten()) yield return new WaitForSeconds(0.9f);
         yield return ThrowReel(tapPos, bobber.transform.position, castSpeed, castAngle);
-        StartCoroutine(fishCatching.CastingLine());
+        StartCoroutine(fishCatching.StartFishing());
     }
 
     public IEnumerator ThrowReel(Vector3 target, Vector3 beginPos, float speed, float angle)
     {
-        flying = true;
         // this part of the script was gotten from https://discussions.unity.com/t/throw-an-object-along-a-parabola/490479 from user: Stephan-B
         // Short delay added before Projectile is thrown
 
@@ -114,7 +114,7 @@ public class CastingLine : MonoBehaviour
         }
         bobber.transform.rotation = Quaternion.Euler(Vector3.zero);
         StartCoroutine(LandingWaves());
-        flying = false;
+        casted = false;
     }
 
     private IEnumerator LandingWaves()
@@ -168,5 +168,10 @@ public class CastingLine : MonoBehaviour
     {
         water.SetFloat("_Power", 0);
         water.SetVector("_BeginPos", Vector4.zero);
+    }
+
+    public void GetAnimator(Animator pAni)
+    {
+        animator = pAni;
     }
 }

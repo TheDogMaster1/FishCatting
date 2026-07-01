@@ -19,14 +19,14 @@ public class ButtonBehaviour : MonoBehaviour
     }
     public void GoBackScene()
     {
+        PlayerDataManager.instance.SaveGame();
         SceneManager.LoadScene(GameManager.instance.locatedLocation);
     }
     public void CheckCutscene(string sceneToLoad)
     {
         if(GameManager.instance.seenCutscene)
         {
-            LoadScene(sceneToLoad);
-            
+            LoadScene(sceneToLoad); 
         }
     }
 }
