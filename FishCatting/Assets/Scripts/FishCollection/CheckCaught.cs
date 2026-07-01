@@ -11,6 +11,7 @@ public class CheckCaught : MonoBehaviour
     public Sprite unknownImage;
     public Sprite fishImage;
     public GameObject closeButton;
+    public GameObject darkener;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +29,7 @@ public class CheckCaught : MonoBehaviour
             {
                 this.AddComponent<Inspectable>();
                 GetComponent<Inspectable>().closeButton = closeButton;
+                GetComponent<Inspectable>().darkener = darkener;
             }
         }
         else

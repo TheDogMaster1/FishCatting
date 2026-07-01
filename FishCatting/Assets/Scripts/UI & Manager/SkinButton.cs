@@ -11,12 +11,10 @@ public class SkinButton : MonoBehaviour
     [SerializeField]
     private int Cost = 10;
     [SerializeField]
-    private Sprite boughtTexture;
-    [SerializeField]
-    private Sprite unBoughtTexture;
-    [SerializeField]
     private Image skinShowcase;
 
+    [SerializeField]
+    private GameObject coinImage;
     private bool BoughtSkin = false;
 
     private void Start()
@@ -39,14 +37,18 @@ public class SkinButton : MonoBehaviour
         if (thisSkin.isUnlocked)
         {
             buttonText.text = GameManager.instance.currentSkin.customskinName == skin ? "Equipped" : "Equip";
-            skinShowcase.sprite = boughtTexture;
+            skinShowcase.color = Color.white;
             SkinManager.Instance.AddBoughtButton(this);
             BoughtSkin = true;
         }
         else
         {
-            buttonText.text = "Buy";
-            skinShowcase.sprite = unBoughtTexture;
+            buttonText.text = $"    {Cost}";
+            if (coinImage != null)
+            {
+                coinImage.SetActive(true);
+            }
+            skinShowcase.color = Color.black;
             BoughtSkin = false;
         }
     }
@@ -75,8 +77,12 @@ public class SkinButton : MonoBehaviour
                 {
                     customSkin.isUnlocked = true;
                     BoughtSkin = true;
+                    if (coinImage != null)
+                    {
+                        coinImage.SetActive(false);
+                    }
                     StartCoroutine(SkinManager.Instance.EquipSkin(skin, this));
-                    skinShowcase.sprite = boughtTexture;
+                    skinShowcase.color = Color.white;
                     yield break;
                 }
             }
@@ -85,8 +91,16 @@ public class SkinButton : MonoBehaviour
         else
         {
             buttonText.text = "Too Expensive!!";
+            if (coinImage != null)
+            {
+                coinImage.SetActive(false);
+            }
             yield return new WaitForSeconds(2);
-            buttonText.text = "Buy";
+            if (coinImage != null)
+            {
+                coinImage.SetActive(true);
+            }
+            buttonText.text = $"   {Cost}";
         }
     }
 

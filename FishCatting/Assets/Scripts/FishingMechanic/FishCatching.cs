@@ -95,7 +95,7 @@ public class FishCatching : MonoBehaviour
     {
         catAnimator.SetTrigger("Casting");
         Vector3 uncasPos = casting.GetUnCassed().position;
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.4f);
         StartCoroutine(casting.ThrowReel(uncasPos, casting.GetBobber().transform.position, casting.GetReelInSpeed(), casting.GetReelInAngle()));
         Debug.Log("no fish lol");
     }

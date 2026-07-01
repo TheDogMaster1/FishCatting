@@ -52,113 +52,131 @@ MonoBehaviour:
   newLakeFishList:
   - name: Trout
     value: 22
-    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    fishModel: {fileID: 6404629038764304237, guid: 01b2c5b4e9c3b084ebc84e93001c3f99, type: 3}
     rarity: 0
     rarityWeight: 95
     caught: 0
   - name: Carp
     value: 27
-    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    fishModel: {fileID: 1435057170816731257, guid: 4d093109619222648a49455574a70dea, type: 3}
     rarity: 0
     rarityWeight: 85
     caught: 0
   - name: Crappie
     value: 35
-    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    fishModel: {fileID: 2586368040187633062, guid: 5ecaa096f0f53c34e8b7fc6051208f6d, type: 3}
     rarity: 0
     rarityWeight: 85
     caught: 0
-  - name: FishCat
+  - name: FlatFish
     value: 60
-    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    fishModel: {fileID: 1509050510355173188, guid: d9d7538057c9b734bad9d7910f6a22d0, type: 3}
     rarity: 1
     rarityWeight: 50
     caught: 0
   - name: GoldFish
     value: 70
-    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    fishModel: {fileID: 1937893045281379386, guid: 487c9f64cfe453d4e937ffb4e751089c, type: 3}
     rarity: 1
     rarityWeight: 45
     caught: 0
   - name: Crab
     value: 250
-    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    fishModel: {fileID: 9202722150689525217, guid: a3bb53fecd25539488705a43e5e8fe0c, type: 3}
     rarity: 2
     rarityWeight: 15
+    caught: 0
+  - name: CoolFish
+    value: 999
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    rarity: 2
+    rarityWeight: 1
     caught: 0
   newSeaFishList:
   - name: Mackerel
     value: 35
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 2712912920750098799, guid: 5a6109d6939413f40bd8dde4e8538037, type: 3}
     rarity: 0
     rarityWeight: 130
     caught: 0
   - name: Ray
     value: 40
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 619165634735733314, guid: d29cda50ccefa1843b1388f7bc2a2516, type: 3}
     rarity: 0
     rarityWeight: 120
     caught: 0
   - name: Bass
     value: 45
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 741379135528718646, guid: 58342d6cde8207245b7e63438d870c7d, type: 3}
     rarity: 0
     rarityWeight: 110
     caught: 0
   - name: Tuna
     value: 90
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 4076436316116559472, guid: 12bafb1664805ff4bade56f8bdeac185, type: 3}
     rarity: 1
     rarityWeight: 45
     caught: 0
   - name: Squid
     value: 115
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 2882913542150068464, guid: 52504f952f686a6498fc3bf301d88355, type: 3}
     rarity: 1
     rarityWeight: 40
     caught: 0
   - name: SunFish
     value: 350
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 2766692287756331812, guid: 5b2f61446eefe8147a50b5a450ad9ece, type: 3}
     rarity: 2
     rarityWeight: 10
+    caught: 0
+  - name: FishOfFish
+    value: 1666
+    fishModel: {fileID: 6131734464522143217, guid: e3eb6ce77dc05c546a446d0fc78c51d5, type: 3}
+    rarity: 2
+    rarityWeight: 1
     caught: 0
   newForestFishList:
   - name: Pike
     value: 55
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 1717057042792012915, guid: 5b5f877f3e2d70145bf0af9b6203151d, type: 3}
     rarity: 0
     rarityWeight: 175
     caught: 0
   - name: CatFish
     value: 65
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 8416792764650192357, guid: 25e5b1e855f1442408d09cd30d12f62e, type: 3}
     rarity: 0
     rarityWeight: 160
     caught: 0
   - name: Eel
     value: 75
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 3748365983858422172, guid: 4c8f27db2763bae44a868e6c934b2687, type: 3}
     rarity: 0
     rarityWeight: 150
     caught: 0
   - name: Salmon
     value: 90
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 5318495846840985951, guid: 14e67ce45c23af14e8ccf12d8f278052, type: 3}
     rarity: 1
     rarityWeight: 80
     caught: 0
   - name: CrayFish
     value: 125
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7523495083171029042, guid: e4713417c26debb4fa76f785c253eff0, type: 3}
     rarity: 1
     rarityWeight: 75
     caught: 0
   - name: Frog
     value: 555
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 1747593276076937793, guid: f2f3f2080587a8145876ce036fd52bc0, type: 3}
     rarity: 2
     rarityWeight: 8
+    caught: 0
+  - name: FishCat
+    value: 2777
+    fishModel: {fileID: 1517718424414529785, guid: e1131abe3b5625d4d82808d9ef7163ff, type: 3}
+    rarity: 1
+    rarityWeight: 1
     caught: 0
   newUnlockedAreas:
   - name: Lake
@@ -197,113 +215,131 @@ MonoBehaviour:
   lakeFishList:
   - name: Trout
     value: 22
-    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    fishModel: {fileID: 6404629038764304237, guid: 01b2c5b4e9c3b084ebc84e93001c3f99, type: 3}
     rarity: 0
     rarityWeight: 95
     caught: 0
   - name: Carp
     value: 27
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 1435057170816731257, guid: 4d093109619222648a49455574a70dea, type: 3}
     rarity: 0
     rarityWeight: 85
     caught: 0
   - name: Crappie
     value: 35
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 2586368040187633062, guid: 5ecaa096f0f53c34e8b7fc6051208f6d, type: 3}
     rarity: 0
     rarityWeight: 85
     caught: 0
-  - name: FishCat
+  - name: FlatFish
     value: 60
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 1509050510355173188, guid: d9d7538057c9b734bad9d7910f6a22d0, type: 3}
     rarity: 1
     rarityWeight: 50
     caught: 0
   - name: GoldFish
     value: 70
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 1937893045281379386, guid: 487c9f64cfe453d4e937ffb4e751089c, type: 3}
     rarity: 1
     rarityWeight: 45
     caught: 0
   - name: Crab
     value: 250
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 9202722150689525217, guid: a3bb53fecd25539488705a43e5e8fe0c, type: 3}
     rarity: 2
     rarityWeight: 15
+    caught: 0
+  - name: CoolFish
+    value: 999
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    rarity: 2
+    rarityWeight: 1
     caught: 0
   seaFishList:
   - name: Mackerel
     value: 35
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 2712912920750098799, guid: 5a6109d6939413f40bd8dde4e8538037, type: 3}
     rarity: 0
     rarityWeight: 130
     caught: 0
   - name: Ray
     value: 40
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 619165634735733314, guid: d29cda50ccefa1843b1388f7bc2a2516, type: 3}
     rarity: 0
     rarityWeight: 120
     caught: 0
   - name: Bass
     value: 45
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 741379135528718646, guid: 58342d6cde8207245b7e63438d870c7d, type: 3}
     rarity: 0
     rarityWeight: 110
     caught: 0
   - name: Tuna
     value: 90
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 4076436316116559472, guid: 12bafb1664805ff4bade56f8bdeac185, type: 3}
     rarity: 1
     rarityWeight: 45
     caught: 0
   - name: Squid
     value: 115
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 2882913542150068464, guid: 52504f952f686a6498fc3bf301d88355, type: 3}
     rarity: 1
     rarityWeight: 40
     caught: 0
   - name: SunFish
     value: 350
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 2766692287756331812, guid: 5b2f61446eefe8147a50b5a450ad9ece, type: 3}
     rarity: 2
     rarityWeight: 10
+    caught: 0
+  - name: FishOfFish
+    value: 1666
+    fishModel: {fileID: 6131734464522143217, guid: e3eb6ce77dc05c546a446d0fc78c51d5, type: 3}
+    rarity: 2
+    rarityWeight: 1
     caught: 0
   forestFishList:
   - name: Pike
     value: 55
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 1717057042792012915, guid: 5b5f877f3e2d70145bf0af9b6203151d, type: 3}
     rarity: 0
     rarityWeight: 175
     caught: 0
   - name: CatFish
     value: 65
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 8416792764650192357, guid: 25e5b1e855f1442408d09cd30d12f62e, type: 3}
     rarity: 0
     rarityWeight: 160
     caught: 0
   - name: Eel
     value: 75
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 3748365983858422172, guid: 4c8f27db2763bae44a868e6c934b2687, type: 3}
     rarity: 0
     rarityWeight: 150
     caught: 0
   - name: Salmon
     value: 90
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 5318495846840985951, guid: 14e67ce45c23af14e8ccf12d8f278052, type: 3}
     rarity: 1
     rarityWeight: 80
     caught: 0
   - name: CrayFish
     value: 125
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 7523495083171029042, guid: e4713417c26debb4fa76f785c253eff0, type: 3}
     rarity: 1
     rarityWeight: 75
     caught: 0
   - name: Frog
     value: 555
-    fishModel: {fileID: 0}
+    fishModel: {fileID: 1747593276076937793, guid: f2f3f2080587a8145876ce036fd52bc0, type: 3}
     rarity: 2
     rarityWeight: 8
+    caught: 0
+  - name: FishCat
+    value: 2777
+    fishModel: {fileID: 1517718424414529785, guid: e1131abe3b5625d4d82808d9ef7163ff, type: 3}
+    rarity: 1
+    rarityWeight: 1
     caught: 0
   unlockedAreas:
   - name: Lake
@@ -317,10 +353,10 @@ MonoBehaviour:
     unlocked: 0
   locatedLocation: Lake
   skins:
-  - {fileID: 3164779658816071873, guid: cacebdaaa4d69a2468cf37681724677c, type: 3}
-  - {fileID: 8065721816458837448, guid: 852740bb3079d5444830a03207e05d17, type: 3}
-  - {fileID: 557420987998136019, guid: 60c1155813bb96e40858535890003d05, type: 3}
-  - {fileID: 1116518761953513406, guid: b94545279482f544f98b7706b8f0947f, type: 3}
+  - {fileID: 8796569510890218671, guid: 46011269910063e43aec79c768eec7c7, type: 3}
+  - {fileID: 5963377006072701678, guid: 4f01c89ea7cf06c45a2e186539c43672, type: 3}
+  - {fileID: 5207549825816756615, guid: 16b073f1f8a354a4cbd893e54f7240f2, type: 3}
+  - {fileID: 1568242843382412291, guid: 6957da9b53bc6bc449bf5b432194c41f, type: 3}
   customSkins:
   - customskinName: 0
     isUnlocked: 1
