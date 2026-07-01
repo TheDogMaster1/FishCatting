@@ -68,7 +68,7 @@ MonoBehaviour:
     rarity: 0
     rarityWeight: 85
     caught: 0
-  - name: FishCat
+  - name: FlatFish
     value: 60
     fishModel: {fileID: 1509050510355173188, guid: d9d7538057c9b734bad9d7910f6a22d0, type: 3}
     rarity: 1
@@ -85,6 +85,12 @@ MonoBehaviour:
     fishModel: {fileID: 9202722150689525217, guid: a3bb53fecd25539488705a43e5e8fe0c, type: 3}
     rarity: 2
     rarityWeight: 15
+    caught: 0
+  - name: CoolFish
+    value: 999
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    rarity: 2
+    rarityWeight: 1
     caught: 0
   newSeaFishList:
   - name: Mackerel
@@ -123,6 +129,12 @@ MonoBehaviour:
     rarity: 2
     rarityWeight: 10
     caught: 0
+  - name: FishOfFish
+    value: 1666
+    fishModel: {fileID: 6131734464522143217, guid: e3eb6ce77dc05c546a446d0fc78c51d5, type: 3}
+    rarity: 2
+    rarityWeight: 1
+    caught: 0
   newForestFishList:
   - name: Pike
     value: 55
@@ -159,6 +171,12 @@ MonoBehaviour:
     fishModel: {fileID: 1747593276076937793, guid: f2f3f2080587a8145876ce036fd52bc0, type: 3}
     rarity: 2
     rarityWeight: 8
+    caught: 0
+  - name: FishCat
+    value: 2777
+    fishModel: {fileID: 1517718424414529785, guid: e1131abe3b5625d4d82808d9ef7163ff, type: 3}
+    rarity: 1
+    rarityWeight: 1
     caught: 0
   newUnlockedAreas:
   - name: Lake
@@ -213,7 +231,7 @@ MonoBehaviour:
     rarity: 0
     rarityWeight: 85
     caught: 0
-  - name: FishCat
+  - name: FlatFish
     value: 60
     fishModel: {fileID: 1509050510355173188, guid: d9d7538057c9b734bad9d7910f6a22d0, type: 3}
     rarity: 1
@@ -230,6 +248,12 @@ MonoBehaviour:
     fishModel: {fileID: 9202722150689525217, guid: a3bb53fecd25539488705a43e5e8fe0c, type: 3}
     rarity: 2
     rarityWeight: 15
+    caught: 0
+  - name: CoolFish
+    value: 999
+    fishModel: {fileID: 7200993589934033039, guid: 97db661535683114f8b5d6b2d0b103f4, type: 3}
+    rarity: 2
+    rarityWeight: 1
     caught: 0
   seaFishList:
   - name: Mackerel
@@ -268,6 +292,12 @@ MonoBehaviour:
     rarity: 2
     rarityWeight: 10
     caught: 0
+  - name: FishOfFish
+    value: 1666
+    fishModel: {fileID: 6131734464522143217, guid: e3eb6ce77dc05c546a446d0fc78c51d5, type: 3}
+    rarity: 2
+    rarityWeight: 1
+    caught: 0
   forestFishList:
   - name: Pike
     value: 55
@@ -304,6 +334,12 @@ MonoBehaviour:
     fishModel: {fileID: 1747593276076937793, guid: f2f3f2080587a8145876ce036fd52bc0, type: 3}
     rarity: 2
     rarityWeight: 8
+    caught: 0
+  - name: FishCat
+    value: 2777
+    fishModel: {fileID: 1517718424414529785, guid: e1131abe3b5625d4d82808d9ef7163ff, type: 3}
+    rarity: 1
+    rarityWeight: 1
     caught: 0
   unlockedAreas:
   - name: Lake
