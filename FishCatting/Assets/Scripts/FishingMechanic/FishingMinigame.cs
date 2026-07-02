@@ -51,6 +51,7 @@ public class FishingMinigame : MonoBehaviour
     private CastingLine casting;
     [SerializeField]
     private Animator catAnimator;
+    public AudioSource reelIn;
     private Fish fish = new("newfish", 0, Fish.Rarity.Common, 100);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -186,6 +187,7 @@ public class FishingMinigame : MonoBehaviour
             catAnimator.SetTrigger("Lost");
             Debug.Log("Lose D:"); // TODO: add something to show that you lost
         }
+        reelIn.Play();
         StartCoroutine(casting.ThrowReel(casting.GetUnCassed().position, casting.GetBobber().transform.position, casting.GetReelInSpeed(), casting.GetReelInAngle()));
         casting.SetCastingbool(false);
         miniGame.SetActive(false);

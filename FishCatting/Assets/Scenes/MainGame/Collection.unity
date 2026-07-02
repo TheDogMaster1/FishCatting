@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 1203749779}
   - component: {fileID: 1203749778}
   m_Layer: 0
-  m_Name: LakeMusic
+  m_Name: CollectionMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

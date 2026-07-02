@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public string locatedLocation;
     public List<GameObject> skins;
     public List<CustomSkins> customSkins = new();
+    public AudioSource coinSpend;
     [HideInInspector]
     //public GameObject currentSkin;
     public CustomSkins currentSkin;
@@ -131,6 +132,10 @@ public class GameManager : MonoBehaviour
     }
     public bool Buy(int moneyCost)
     {
+        if (coinSpend != null)
+        {
+            coinSpend.Play();
+        }
         if (moneyCost > money)
         {
             return false;
