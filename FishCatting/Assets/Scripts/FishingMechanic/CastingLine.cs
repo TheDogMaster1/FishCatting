@@ -123,7 +123,7 @@ public class CastingLine : MonoBehaviour
 
     private IEnumerator LandingWaves()
     {
-        if (bobber.transform.position.y > 0)
+        if (bobber.transform.position.y > uncastPosition.position.y - 0.1f)
         {
             water.SetFloat("_Power", 0);
         }
