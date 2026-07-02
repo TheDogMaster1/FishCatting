@@ -98,6 +98,7 @@ public class FishCatching : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         StartCoroutine(casting.ThrowReel(uncasPos, casting.GetBobber().transform.position, casting.GetReelInSpeed(), casting.GetReelInAngle()));
         Debug.Log("no fish lol");
+        minigame.reelIn.Play();
     }
 
     private void FishBite()

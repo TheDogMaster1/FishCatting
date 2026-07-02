@@ -115,6 +115,7 @@ public class CastingLine : MonoBehaviour
         bobber.transform.rotation = Quaternion.Euler(Vector3.zero);
         StartCoroutine(LandingWaves());
         casted = false;
+        minigame.reelIn.Stop();
     }
 
     private IEnumerator LandingWaves()
