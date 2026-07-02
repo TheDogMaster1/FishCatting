@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         {
             morgana = FindAnyObjectByType<Morgana>().transform;
             GameObject skinToSpawn = new();
+            Destroy(skinToSpawn);
             switch (currentSkin.customskinName)
             {
                 case CustomSkins.Skins.morgana:
