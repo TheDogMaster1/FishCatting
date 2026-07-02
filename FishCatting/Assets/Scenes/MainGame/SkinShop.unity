@@ -2333,7 +2333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinButton
   skin: 3
-  Cost: 10
+  Cost: 500
   skinShowcase: {fileID: 1960439676}
   coinImage: {fileID: 11469056}
 --- !u!1 &885024857
@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinButton
   skin: 2
-  Cost: 10
+  Cost: 300
   skinShowcase: {fileID: 1139589914}
   coinImage: {fileID: 1608900433}
 --- !u!1 &924842743
@@ -2972,7 +2972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinButton
   skin: 1
-  Cost: 10
+  Cost: 150
   skinShowcase: {fileID: 304196325}
   coinImage: {fileID: 1614494779}
 --- !u!1 &1017059111
