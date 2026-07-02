@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
             }
             var morganaSkin = Instantiate(skinToSpawn, Vector3.zero, Quaternion.identity, morgana);
             morganaSkin.transform.localPosition = Vector3.zero;
+            morganaSkin.transform.localRotation = Quaternion.identity;
             Animator catAni = morganaSkin.GetComponent<Animator>();
             castingLine.GetAnimator(catAni);
             catching.GetCatAni(catAni);
