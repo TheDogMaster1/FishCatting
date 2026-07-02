@@ -12,6 +12,8 @@ public class FishCatching : MonoBehaviour
     private Animator catAnimator;
     [SerializeField]
     private BobAnimationEvents bobAnimationEvents;
+    [SerializeField]
+    private AudioSource realBite;
 
     [SerializeField]
     private TextMeshProUGUI debugText;
@@ -104,6 +106,7 @@ public class FishCatching : MonoBehaviour
     private void FishBite()
     {
         bobAnimator.SetTrigger("RealBite");
+        realBite.Play();
     }
 
     public void SetFishTime()

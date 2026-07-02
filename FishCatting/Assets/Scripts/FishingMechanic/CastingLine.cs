@@ -13,6 +13,8 @@ public class CastingLine : MonoBehaviour
     private Material water;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private AudioSource FlingSound;
 
     [Header("Casting Settings")]
     [SerializeField, Range(1, 89)]
@@ -77,6 +79,7 @@ public class CastingLine : MonoBehaviour
         animator.SetTrigger("Casting");
         Vector3 tapPos = clickPosition.GetTapPos("AllowCast");
         if (!fishCatching.GetFishBitten()) yield return new WaitForSeconds(0.4f);
+        FlingSound.Play();
         yield return ThrowReel(tapPos, bobber.transform.position, castSpeed, castAngle);
         StartCoroutine(fishCatching.StartFishing());
     }
